@@ -8,7 +8,11 @@ export default async function Lighthouse() {
 
   if (!result.ok) {
     return (
-      <LighthouseFetchError status={result.status} message={result.message} />
+      <LighthouseFetchError
+        status={result.status}
+        message={result.message}
+        detail={result.detail}
+      />
     );
   }
 

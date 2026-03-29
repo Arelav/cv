@@ -4,20 +4,31 @@ import LighthouseIntro from "./LighthouseIntro";
 type Props = {
   status: number;
   message: string;
+  detail?: string;
 };
 
-export default function LighthouseFetchError({ status, message }: Props) {
+export default function LighthouseFetchError({
+  status,
+  message,
+  detail: upstreamDetail,
+}: Props) {
+  const main =
+    message.trim() ||
+    `Could not load PageSpeed scores${status > 0 ? ` (HTTP ${status})` : ""}. Try again later.`;
+
   return (
     <section aria-labelledby="lighthouse-heading">
       <LighthouseIntro />
       <ApiUnavailable>
-        <p>
-          Could not load PageSpeed scores {status > 0 ? `(HTTP ${status})` : ""}
-          . The upstream service may be busy or unreachable.
-        </p>
-        {process.env.NODE_ENV === "development" ? (
-          <p className="mt-2 font-mono text-xs text-zinc-500 dark:text-zinc-500">
-            {message}
+        <p>{main}</p>
+        {upstreamDetail ? (
+          <p className="text-zinc-600 dark:text-zinc-300 mt-2 break-words font-mono text-xs">
+            {upstreamDetail}
+          </p>
+        ) : null}
+        {process.env.NODE_ENV === "development" && status > 0 ? (
+          <p className="text-zinc-600 dark:text-zinc-300 mt-2 font-mono text-xs">
+            HTTP {status}
           </p>
         ) : null}
       </ApiUnavailable>

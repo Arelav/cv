@@ -9,7 +9,7 @@ export default function ApiUnavailable({ children }: PropsWithChildren) {
   const router = useRouter();
   return (
     <div className="mt-4 rounded-xl border border-zinc-200/90 bg-zinc-50/90 p-4 shadow-sm dark:border-zinc-700/80 dark:bg-zinc-900/50">
-      <div className="text-sm text-zinc-600 dark:text-zinc-400">{children}</div>
+      <div className="text-zinc-600 dark:text-zinc-300 text-sm">{children}</div>
       <button
         type="button"
         onClick={() => router.refresh()}

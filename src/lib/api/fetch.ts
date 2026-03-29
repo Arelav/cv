@@ -10,7 +10,11 @@ async function fetchApiJson<T>(url: string): Promise<ApiResult<T>> {
       let message = res.statusText || `Request failed (${res.status})`;
       if (raw) {
         try {
-          const j = JSON.parse(raw) as { message?: string; error?: string };
+          const j = JSON.parse(raw) as {
+            message?: string;
+            error?: string;
+            detail?: string;
+          };
           if (typeof j.message === "string" && j.message.length > 0) {
             message = j.message;
           } else if (typeof j.error === "string" && j.error.length > 0) {
@@ -18,6 +22,11 @@ async function fetchApiJson<T>(url: string): Promise<ApiResult<T>> {
           } else {
             message = raw.slice(0, 300);
           }
+          const detail =
+            typeof j.detail === "string" && j.detail.length > 0
+              ? j.detail
+              : undefined;
+          return { ok: false, status: res.status, message, detail };
         } catch {
           message = raw.slice(0, 300);
         }

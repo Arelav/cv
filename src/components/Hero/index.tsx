@@ -1,3 +1,4 @@
+import { MetaSeparator } from "@/components/MetaSeparator";
 import { person } from "@/lib/cv-data";
 
 export default function Hero() {
@@ -8,7 +9,7 @@ export default function Hero() {
           <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
             {person.name}
           </h1>
-          <p className="mt-1 text-lg text-zinc-500 dark:text-zinc-400">
+          <p className="text-zinc-600 dark:text-zinc-300 mt-1 text-lg">
             {person.title}
           </p>
         </div>
@@ -19,7 +20,9 @@ export default function Hero() {
         )}
       </div>
 
-      <p className="text-prose mt-4 max-w-2xl">{person.bio}</p>
+      <p className="text-zinc-700 dark:text-zinc-300 mt-4 max-w-2xl">
+        {person.bio}
+      </p>
 
       <nav
         aria-label="Contact links"
@@ -27,35 +30,29 @@ export default function Hero() {
       >
         <a
           href={`mailto:${person.contact.email}`}
-          className="link-subtle"
+          className="text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-zinc-100"
         >
           {person.contact.email}
         </a>
-        <span className="text-zinc-300 dark:text-zinc-600" aria-hidden="true">
-          ·
-        </span>
-        <span className="text-zinc-500 dark:text-zinc-400">
+        <MetaSeparator variant="nav" />
+        <span className="text-zinc-600 dark:text-zinc-300">
           {person.location}
         </span>
-        <span className="text-zinc-300 dark:text-zinc-600" aria-hidden="true">
-          ·
-        </span>
+        <MetaSeparator variant="nav" />
         <a
           href={person.contact.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className="link-subtle"
+          className="text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-zinc-100"
         >
           LinkedIn
         </a>
-        <span className="text-zinc-300 dark:text-zinc-600" aria-hidden="true">
-          ·
-        </span>
+        <MetaSeparator variant="nav" />
         <a
           href={person.contact.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="link-subtle"
+          className="text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-zinc-100"
         >
           GitHub
         </a>

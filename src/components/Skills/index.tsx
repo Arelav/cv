@@ -13,7 +13,7 @@ export default function Skills() {
             key={category}
             className="flex flex-col gap-1 sm:flex-row sm:gap-6"
           >
-            <dt className="w-44 shrink-0 text-sm text-zinc-500 dark:text-zinc-400">
+            <dt className="text-zinc-600 dark:text-zinc-300 w-44 shrink-0 text-sm">
               {category}
             </dt>
             <dd className="text-sm text-zinc-700 dark:text-zinc-300">

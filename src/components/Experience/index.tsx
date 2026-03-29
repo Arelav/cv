@@ -1,3 +1,4 @@
+import { MetaSeparator } from "@/components/MetaSeparator";
 import { experience } from "@/lib/cv-data";
 
 export default function Experience() {
@@ -16,21 +17,23 @@ export default function Experience() {
             <div className="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between">
               <div>
                 <span className="font-medium">{job.role}</span>
-                <span className="text-zinc-400 dark:text-zinc-500"> · </span>
-                <span className="text-prose">{job.company}</span>
+                <MetaSeparator />
+                <span className="text-zinc-700 dark:text-zinc-300">
+                  {job.company}
+                </span>
               </div>
-              <div className="text-sm text-zinc-400 dark:text-zinc-500 sm:text-right">
+              <div className="text-zinc-600 dark:text-zinc-300 text-sm sm:text-right">
                 <span>{job.period}</span>
                 {job.location && (
                   <>
-                    <span aria-hidden="true"> · </span>
+                    <MetaSeparator />
                     <span>{job.location}</span>
                   </>
                 )}
               </div>
             </div>
 
-            <ul className="text-prose mt-3 space-y-1.5 text-sm">
+            <ul className="text-zinc-700 dark:text-zinc-300 mt-3 space-y-1.5 text-sm">
               {job.bullets.map((bullet) => (
                 <li key={bullet} className="flex gap-2">
                   <span

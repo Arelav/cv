@@ -56,9 +56,10 @@ export default async function GitHub() {
                 <div className="mt-auto flex items-center gap-3 pt-3 text-xs text-zinc-400 dark:text-zinc-500">
                   {repo.language && <span>{repo.language}</span>}
                   {repo.stars > 0 && (
-                    <span role="img" aria-label={`${repo.stars} stars`}>
-                      ★ {repo.stars}
-                    </span>
+                    <>
+                      <span aria-hidden="true">★ {repo.stars}</span>
+                      <span className="sr-only">{repo.stars} stars</span>
+                    </>
                   )}
                 </div>
               </a>

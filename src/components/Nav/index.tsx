@@ -1,53 +1,58 @@
-import Image from "next/image";
-import Link from "next/link";
-import { person } from "@/lib/cv-data";
+"use client";
 
-const linkClass =
-  "text-sm text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100";
+import { usePathname } from "next/navigation";
+import { useEffect, useId, useState } from "react";
+import { useMedia } from "react-use";
+import { cn } from "@/lib/cn";
+import DesktopNav from "./DesktopNav";
+import MobileMenuButton from "./MobileMenuButton";
+import MobileNavPanel from "./MobileNavPanel";
+import NavBrand from "./NavBrand";
 
 export default function Nav() {
-  return (
-    <header className="sticky top-0 z-10 border-b border-zinc-200 bg-white/80 backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/80">
-      <nav
-        aria-label="Site navigation"
-        className="mx-auto flex h-14 w-full max-w-3xl items-center gap-6 px-4 sm:px-6"
-      >
-        <Link href="/" className="flex items-center gap-2.5">
-          <Image
-            src="/avatar.jpg"
-            alt={person.name}
-            width={36}
-            height={36}
-            className="rounded-full object-cover"
-          />
-          <span className={linkClass}>Home</span>
-        </Link>
+  const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const panelId = useId();
+  const isMdUp = useMedia("(min-width: 768px)", false);
 
-        <div className="ml-auto flex items-center gap-6">
-          <a
-            href={person.contact.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={linkClass}
-          >
-            GitHub
-          </a>
-          <a
-            href={person.contact.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={linkClass}
-          >
-            LinkedIn
-          </a>
-          <a href={`mailto:${person.contact.email}`} className={linkClass}>
-            {person.contact.email}
-          </a>
-          <Link href="/resume" className={linkClass}>
-            Resume
-          </Link>
-        </div>
-      </nav>
+  useEffect(() => {
+    if (pathname) setMenuOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (isMdUp) setMenuOpen(false);
+  }, [isMdUp]);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMenuOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [menuOpen]);
+
+  return (
+    <header className="sticky top-0 z-50 border-b border-zinc-200 bg-white/90 backdrop-blur-md dark:border-zinc-800 dark:bg-zinc-950/90">
+      <div
+        className={cn(
+          "site-container flex min-h-14 items-center justify-between gap-3",
+        )}
+      >
+        <NavBrand />
+        <DesktopNav />
+        <MobileMenuButton
+          menuOpen={menuOpen}
+          panelId={panelId}
+          onToggle={() => setMenuOpen((o) => !o)}
+        />
+      </div>
+
+      <MobileNavPanel
+        open={menuOpen}
+        panelId={panelId}
+        onClose={() => setMenuOpen(false)}
+      />
     </header>
   );
 }

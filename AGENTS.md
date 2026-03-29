@@ -4,28 +4,10 @@
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
 <!-- END:nextjs-agent-rules -->
 
-# CV Frontend
+> [!CAUTION]
+> Always use the right tool for the job — MCPs, skills, subagents, whatever fits best.
 
-Next.js App Router, TypeScript, Tailwind, Biome.
-
-## Stack
-- Next.js App Router — no `pages/` directory
-- Biome for linting and formatting — do not add ESLint or Prettier
-- Tailwind for all styling — no CSS modules, no inline styles
-- TanStack Query for client-side data fetching
-
-## Version Control
-- Use `jj` — do not use `git` commands
-- All automated `jj` commands must include `--no-pager`
-
-## Rules
-- Prefer Server Components; use `"use client"` only when necessary
-- No `useEffect` for data fetching
-- All API calls go to the Go backend (`cv-api`)
-- Never ignore explicit instructions from the user
-- Mobile-first: write base styles for mobile, use `sm:` / `md:` / `lg:` to scale up
-- Use semantic HTML: `<main>`, `<nav>`, `<header>`, `<footer>`, `<section>`, `<article>`, `<aside>`, `<h1>`–`<h6>` in correct hierarchy
-- Accessibility: meaningful `alt` text, `aria-label` where needed, keyboard-navigable interactive elements, sufficient color contrast, no `<div>` for interactive elements
-
-## Backend
-Go REST API at `http://localhost:8080` in dev.
+@.agents/stack.md
+@.agents/rules.md
+@.agents/components.md
+@.agents/workflow.md

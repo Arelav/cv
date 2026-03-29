@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/valerykh/projects/personal/cv-api/**)",
+      "WebSearch",
+      "Bash(go vet:*)"
+    ]
+  }
+}

@@ -1,4 +1,5 @@
 import type { GitHubStats } from "@/lib/api";
+import Language from "./Language";
 import StarCount from "./StarCount";
 
 type Repo = NonNullable<GitHubStats["top_repos"]>[number];
@@ -25,7 +26,7 @@ export default function RepoCard({
           </span>
         )}
         <div className="mt-auto flex items-center gap-3 pt-3 text-xs text-zinc-400 dark:text-zinc-500">
-          {language && <span>{language}</span>}
+          <Language language={language} />
           {stars > 0 && <StarCount count={stars} />}
         </div>
       </a>

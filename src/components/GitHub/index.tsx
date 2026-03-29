@@ -26,9 +26,7 @@ export default async function GitHub() {
           aria-label="Top repositories"
         >
           {topRepos.map((repo) => (
-            <li key={repo.name}>
-              <RepoCard {...repo} />
-            </li>
+            <RepoCard key={repo.name} {...repo} />
           ))}
         </ul>
       )}

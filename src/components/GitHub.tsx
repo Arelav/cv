@@ -1,6 +1,5 @@
-import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { getGitHubStats } from "@/lib/api";
-import Icon from "./Icon";
+import StarCount from "./StarCount";
 
 export default async function GitHub() {
   const stats = await getGitHubStats();
@@ -57,12 +56,7 @@ export default async function GitHub() {
                 )}
                 <div className="mt-auto flex items-center gap-3 pt-3 text-xs text-zinc-400 dark:text-zinc-500">
                   {repo.language && <span>{repo.language}</span>}
-                  {repo.stars > 0 && (
-                    <>
-                      <Icon icon={faStar} aria-label={`${repo.stars} stars`} />
-                      <span aria-hidden="true">{repo.stars}</span>
-                    </>
-                  )}
+                  {repo.stars > 0 && <StarCount count={repo.stars} />}
                 </div>
               </a>
             </li>

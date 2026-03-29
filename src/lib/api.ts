@@ -18,8 +18,28 @@ export interface GitHubStats {
     | null;
 }
 
-export async function getGitHubStats(): Promise<GitHubStats> {
+export interface LighthouseResult {
+  performance: number;
+  accessibility: number;
+  best_practices: number;
+  seo: number;
+  metrics: {
+    fcp: number;
+    lcp: number;
+    tbt: number;
+    cls: number;
+    tti: number;
+  };
+}
+
+export async function getLighthouseResult(): Promise<LighthouseResult | null> {
+  const res = await fetch(`${API_URL}/lighthouse`);
+  if (!res.ok) return null;
+  return res.json();
+}
+
+export async function getGitHubStats(): Promise<GitHubStats | null> {
   const res = await fetch(`${API_URL}/github/stats`);
-  if (!res.ok) throw new Error(`Failed to fetch GitHub stats: ${res.status}`);
+  if (!res.ok) return null;
   return res.json();
 }

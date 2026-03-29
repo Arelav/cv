@@ -2,20 +2,19 @@ import { Suspense } from "react";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import GitHub from "@/components/GitHub";
 import Lighthouse from "@/components/Lighthouse";
-import { cn } from "@/lib/cn";
 import { person } from "@/lib/cv-data";
 
 export default function Home() {
   return (
-    <main className={cn("site-container py-16 sm:py-24")}>
+    <main className="mx-auto w-full max-w-3xl px-4 sm:px-6 py-16 sm:py-24">
       <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
         {person.name}
       </h1>
-      <p className="mt-3 text-lg text-zinc-500 dark:text-zinc-400">
+      <p className="text-zinc-600 dark:text-zinc-300 mt-3 text-lg">
         {person.title}
       </p>
 
-      <div className="mt-8 max-w-xl space-y-4 text-prose">
+      <div className="mt-8 max-w-xl space-y-4 text-zinc-700 dark:text-zinc-300">
         <p>
           Senior frontend engineer with over a decade of building web products —
           mostly React and TypeScript, leading teams, reviewing code, and caring

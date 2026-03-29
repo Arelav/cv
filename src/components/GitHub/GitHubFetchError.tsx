@@ -15,7 +15,7 @@ export default function GitHubFetchError({ status, message }: Props) {
           Could not load GitHub stats {status > 0 ? `(HTTP ${status})` : ""}.
         </p>
         {process.env.NODE_ENV === "development" ? (
-          <p className="mt-2 font-mono text-xs text-zinc-500 dark:text-zinc-500">
+          <p className="text-zinc-600 dark:text-zinc-300 mt-2 font-mono text-xs">
             {message}
           </p>
         ) : null}

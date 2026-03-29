@@ -5,7 +5,7 @@ interface Props {
 export default function TopLanguages({ languages }: Props) {
   return (
     <div className="mt-6">
-      <h3 className="text-sm font-medium text-zinc-500 dark:text-zinc-400">
+      <h3 className="text-zinc-600 dark:text-zinc-300 text-sm font-medium">
         Top languages
       </h3>
       <ul className="mt-2 flex flex-wrap gap-2" aria-label="Top languages">

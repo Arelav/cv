@@ -36,7 +36,7 @@ export default function LighthouseScores({ data }: Props) {
             key={label}
             className="flex items-center justify-between border-b border-zinc-100 py-1.5 text-sm last:border-0 dark:border-zinc-800"
           >
-            <dt className="text-zinc-500 dark:text-zinc-400">{label}</dt>
+            <dt className="text-zinc-600 dark:text-zinc-300">{label}</dt>
             <dd className="font-medium tabular-nums">{value}</dd>
           </div>
         ))}

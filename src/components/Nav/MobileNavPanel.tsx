@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { person } from "@/lib/cv-data";
-import { cn } from "@/lib/cn";
 
 const mobileSheetRowClass =
   "flex min-h-12 items-center px-4 text-base font-medium text-zinc-900 active:bg-zinc-100 dark:text-zinc-100 dark:active:bg-zinc-800";
@@ -19,11 +18,7 @@ export default function MobileNavPanel({ open, panelId, onClose }: Props) {
       id={panelId}
       className="border-t border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-950 md:hidden"
     >
-      <ul
-        className={cn(
-          "site-container divide-y divide-zinc-100 pb-3 dark:divide-zinc-800",
-        )}
-      >
+      <ul className="mx-auto w-full max-w-3xl px-4 sm:px-6 divide-y divide-zinc-100 pb-3 dark:divide-zinc-800">
         <li>
           <Link href="/" className={mobileSheetRowClass} onClick={onClose}>
             Home

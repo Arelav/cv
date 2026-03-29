@@ -56,7 +56,7 @@ export default function Gauge({ label, score }: Props) {
           {rounded}
         </text>
       </svg>
-      <span className="text-center text-xs text-zinc-500 dark:text-zinc-400">
+      <span className="text-zinc-600 dark:text-zinc-300 text-center text-xs">
         {label}
       </span>
     </div>

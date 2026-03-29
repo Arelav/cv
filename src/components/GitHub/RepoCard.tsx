@@ -21,11 +21,11 @@ export default function RepoCard({
       >
         <span className="font-medium">{name}</span>
         {description && (
-          <span className="text-sm text-zinc-500 dark:text-zinc-400">
+          <span className="text-zinc-600 dark:text-zinc-300 text-sm">
             {description}
           </span>
         )}
-        <div className="mt-auto flex items-center gap-3 pt-3 text-xs text-zinc-400 dark:text-zinc-500">
+        <div className="text-zinc-600 dark:text-zinc-300 mt-auto flex items-center gap-3 pt-3 text-xs">
           <Language language={language} />
           <StarCount stars={stars} />
         </div>

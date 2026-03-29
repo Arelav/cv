@@ -3,7 +3,6 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useState } from "react";
 import { useMedia } from "react-use";
-import { cn } from "@/lib/cn";
 import DesktopNav from "./DesktopNav";
 import MobileMenuButton from "./MobileMenuButton";
 import MobileNavPanel from "./MobileNavPanel";
@@ -34,11 +33,7 @@ export default function Nav() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-zinc-200 bg-white/90 backdrop-blur-md dark:border-zinc-800 dark:bg-zinc-950/90">
-      <div
-        className={cn(
-          "site-container flex min-h-14 items-center justify-between gap-3",
-        )}
-      >
+      <div className="mx-auto w-full max-w-3xl px-4 sm:px-6 flex min-h-14 items-center justify-between gap-3">
         <NavBrand />
         <DesktopNav />
         <MobileMenuButton

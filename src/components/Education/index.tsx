@@ -1,3 +1,4 @@
+import { MetaSeparator } from "@/components/MetaSeparator";
 import { education, languages } from "@/lib/cv-data";
 
 export default function Education() {
@@ -15,27 +16,32 @@ export default function Education() {
           <li key={item.degree}>
             <div className="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between">
               <span className="font-medium">{item.degree}</span>
-              <span className="text-sm text-zinc-400 dark:text-zinc-500">
+              <span className="text-zinc-600 dark:text-zinc-300 text-sm">
                 {item.year}
               </span>
             </div>
-            <p className="text-sm text-zinc-500 dark:text-zinc-400">
+            <p className="text-zinc-600 dark:text-zinc-300 text-sm">
               {item.institution}
-              {item.note && ` · ${item.note}`}
+              {item.note ? (
+                <>
+                  <MetaSeparator />
+                  {item.note}
+                </>
+              ) : null}
             </p>
           </li>
         ))}
       </ul>
 
       <div className="mt-8">
-        <h3 className="text-sm font-medium text-zinc-500 dark:text-zinc-400">
+        <h3 className="text-zinc-600 dark:text-zinc-300 text-sm font-medium">
           Languages
         </h3>
         <ul className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm">
           {languages.map((lang) => (
             <li key={lang.name}>
               <span className="font-medium">{lang.name}</span>
-              <span className="text-zinc-400 dark:text-zinc-500">
+              <span className="text-zinc-600 dark:text-zinc-300">
                 {" "}
                 — {lang.level}
               </span>

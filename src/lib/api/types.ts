@@ -32,4 +32,9 @@ export interface LighthouseResult {
 
 export type ApiResult<T> =
   | { ok: true; data: T }
-  | { ok: false; status: number; message: string };
+  | {
+      ok: false;
+      status: number;
+      message: string;
+      detail?: string;
+    };

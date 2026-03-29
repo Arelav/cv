@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { cn } from "@/lib/cn";
 import { person } from "@/lib/cv-data";
 
-const navLinkClass = cn("text-sm", "link-subtle");
+const navLinkClass =
+  "text-sm text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-zinc-100";
 
 export default function DesktopNav() {
   return (

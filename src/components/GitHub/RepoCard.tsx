@@ -1,11 +1,9 @@
-import type { GitHubStats } from "@/lib/api";
+import type { GitHubRepoSummary } from "@/types/api";
 import Language from "./Language";
 import StarCount from "./StarCount";
 
-type Repo = NonNullable<GitHubStats["top_repos"]>[number];
-
 interface Props {
-  repo: Repo;
+  repo: GitHubRepoSummary;
 }
 
 export default function RepoCard({

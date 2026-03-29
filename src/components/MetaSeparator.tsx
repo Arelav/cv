@@ -1,10 +1,6 @@
 import clsx from "clsx";
 
 interface Props {
-  /**
-   * `inline` — spaces around the dot for tight text runs (e.g. role · company).
-   * `nav` — dot only; use with flex `gap-*` (e.g. contact row).
-   */
   variant?: "inline" | "nav";
   className?: string;
 }

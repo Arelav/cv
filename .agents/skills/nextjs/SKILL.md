@@ -3,9 +3,10 @@ name: nextjs
 description: Look up Next.js App Router docs via context7 before writing any Next.js code
 ---
 
-Before writing or modifying any Next.js code, use context7 to fetch up-to-date docs.
+Before writing or modifying any Next.js code:
 
-Library ID: `/vercel/next.js`
+1. Read the **bundled App Router docs** in this repo: `node_modules/next/dist/docs/01-app/` (paths and APIs differ from older Next — do not guess). Quick links to the same topics on the web: [fetching data](https://nextjs.org/docs/app/getting-started/fetching-data), [error handling](https://nextjs.org/docs/app/getting-started/error-handling).
+2. Use **context7** when you need fresher or fuller reference: Library ID `/vercel/next.js`.
 
 This project uses **Next.js App Router**:
 - No `pages/` directory — everything is in `app/`

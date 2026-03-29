@@ -1,5 +1,7 @@
+import type { GitHubLanguageStat } from "@/types/api";
+
 interface Props {
-  languages: { name: string; repos: number }[];
+  languages: GitHubLanguageStat[];
 }
 
 export default function TopLanguages({ languages }: Props) {

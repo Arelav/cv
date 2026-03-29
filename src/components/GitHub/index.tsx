@@ -1,13 +1,14 @@
-import { getGitHubStats } from "@/lib/api";
+import type { GitHubStats } from "@/types/api";
 import GitHubFetchError from "./GitHubFetchError";
 import GitHubLoaded from "./GitHubLoaded";
 
 export default async function GitHub() {
-  const result = await getGitHubStats();
+  const response = await fetch(`${process.env.API_URL}/github/stats`);
+  const data = await response.json();
 
-  if (!result.ok) {
-    return <GitHubFetchError status={result.status} message={result.message} />;
+  if (!response.ok) {
+    return <GitHubFetchError />;
   }
 
-  return <GitHubLoaded stats={result.data} />;
+  return <GitHubLoaded stats={data as GitHubStats} />;
 }

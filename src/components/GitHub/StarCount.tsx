@@ -8,6 +8,7 @@ interface Props {
 }
 
 export default function StarCount({ count }: Props) {
+  if (count <= 0) return null;
   return (
     <span>
       <FontAwesomeIcon icon={faStar} aria-hidden /> {count}

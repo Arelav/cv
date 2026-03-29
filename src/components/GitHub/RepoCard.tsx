@@ -27,7 +27,7 @@ export default function RepoCard({
         )}
         <div className="mt-auto flex items-center gap-3 pt-3 text-xs text-zinc-400 dark:text-zinc-500">
           <Language language={language} />
-          {stars > 0 && <StarCount count={stars} />}
+          <StarCount count={stars} />
         </div>
       </a>
     </li>

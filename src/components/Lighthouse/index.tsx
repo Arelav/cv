@@ -1,3 +1,4 @@
+import ApiUnavailable from "@/components/ApiUnavailable";
 import { getLighthouseResult } from "@/lib/api";
 import Gauge from "./Gauge";
 
@@ -7,7 +8,35 @@ function formatMilliseconds(ms: number) {
 
 export default async function Lighthouse() {
   const result = await getLighthouseResult();
-  if (!result) return null;
+
+  if (!result.ok) {
+    return (
+      <section aria-labelledby="lighthouse-heading">
+        <h2
+          id="lighthouse-heading"
+          className="text-xl font-semibold tracking-tight"
+        >
+          Site Performance
+        </h2>
+        <p className="mt-2 text-sm text-zinc-500 dark:text-zinc-400">
+          Live scores for this page — measured by Google PageSpeed Insights via
+          a Go backend, cached for 24h.
+        </p>
+        <ApiUnavailable>
+          <p>
+            Could not load PageSpeed scores{" "}
+            {result.status > 0 ? `(HTTP ${result.status})` : ""}. The upstream
+            service may be busy or unreachable.
+          </p>
+          {process.env.NODE_ENV === "development" ? (
+            <p className="mt-2 font-mono text-xs text-zinc-500 dark:text-zinc-500">
+              {result.message}
+            </p>
+          ) : null}
+        </ApiUnavailable>
+      </section>
+    );
+  }
 
   const {
     performance,
@@ -15,7 +44,7 @@ export default async function Lighthouse() {
     best_practices,
     seo,
     metrics: { fcp, lcp, tbt, cls, tti },
-  } = result;
+  } = result.data;
 
   return (
     <section aria-labelledby="lighthouse-heading">

@@ -1,4 +1,5 @@
 import { Suspense } from "react";
+import ErrorBoundary from "@/components/ErrorBoundary";
 import GitHub from "@/components/GitHub";
 import Lighthouse from "@/components/Lighthouse";
 import { person } from "@/lib/cv-data";
@@ -21,8 +22,8 @@ export default function Home() {
         </p>
         <p>
           Lately I've been learning Go. Something I've been curious about for a
-          long time — simple syntax, tiny binaries, type-safe with no manual memory management. The backend for
-          this site is written in Go.
+          long time — simple syntax, tiny binaries, type-safe with no manual
+          memory management. The backend for this site is written in Go.
         </p>
         <p>
           At work I care about three things: good people to build with, problems
@@ -30,21 +31,25 @@ export default function Home() {
           morning.
         </p>
         <p>
-          Outside of work I'm a husband and father of two daughters. Four Maine Coon cats and a Maremmano Abruzzese dog run the house. We just pay
-          the bills. I
-          have a Dingwall bass I saved up for — played folk-rock and then a
-          cover band until COVID ended that. Now in a new city and looking for
-          the next one.
+          Outside of work I'm a husband and father of two daughters. Four Maine
+          Coon cats and a Maremmano Abruzzese dog run the house. We just pay the
+          bills. I have a Dingwall bass I saved up for — played folk-rock and
+          then a cover band until COVID ended that. Now in a new city and
+          looking for the next one.
         </p>
       </div>
 
       <div className="mt-16 space-y-14">
-        <Suspense>
-          <Lighthouse />
-        </Suspense>
-        <Suspense>
-          <GitHub />
-        </Suspense>
+        <ErrorBoundary>
+          <Suspense>
+            <Lighthouse />
+          </Suspense>
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <Suspense>
+            <GitHub />
+          </Suspense>
+        </ErrorBoundary>
       </div>
     </main>
   );

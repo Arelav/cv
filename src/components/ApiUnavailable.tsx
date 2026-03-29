@@ -3,12 +3,9 @@
 import { faRotateRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRouter } from "next/navigation";
+import type { PropsWithChildren } from "react";
 
-type Props = {
-  children: React.ReactNode;
-};
-
-export default function ApiUnavailable({ children }: Props) {
+export default function ApiUnavailable({ children }: PropsWithChildren) {
   const router = useRouter();
   return (
     <div className="mt-4 rounded-xl border border-zinc-200/90 bg-zinc-50/90 p-4 shadow-sm dark:border-zinc-700/80 dark:bg-zinc-900/50">

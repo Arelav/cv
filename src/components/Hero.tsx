@@ -23,16 +23,25 @@ export default function Hero() {
         {person.bio}
       </p>
 
-      <nav aria-label="Contact links" className="mt-5 flex flex-wrap gap-4 text-sm">
+      <nav
+        aria-label="Contact links"
+        className="mt-5 flex flex-wrap gap-4 text-sm"
+      >
         <a
           href={`mailto:${person.contact.email}`}
           className="text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
         >
           {person.contact.email}
         </a>
-        <span className="text-zinc-300 dark:text-zinc-600" aria-hidden="true">·</span>
-        <span className="text-zinc-500 dark:text-zinc-400">{person.location}</span>
-        <span className="text-zinc-300 dark:text-zinc-600" aria-hidden="true">·</span>
+        <span className="text-zinc-300 dark:text-zinc-600" aria-hidden="true">
+          ·
+        </span>
+        <span className="text-zinc-500 dark:text-zinc-400">
+          {person.location}
+        </span>
+        <span className="text-zinc-300 dark:text-zinc-600" aria-hidden="true">
+          ·
+        </span>
         <a
           href={person.contact.linkedin}
           target="_blank"
@@ -41,7 +50,9 @@ export default function Hero() {
         >
           LinkedIn
         </a>
-        <span className="text-zinc-300 dark:text-zinc-600" aria-hidden="true">·</span>
+        <span className="text-zinc-300 dark:text-zinc-600" aria-hidden="true">
+          ·
+        </span>
         <a
           href={person.contact.github}
           target="_blank"

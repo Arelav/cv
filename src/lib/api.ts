@@ -7,7 +7,15 @@ export interface GitHubStats {
   followers: number;
   total_stars: number;
   top_languages: { name: string; repos: number }[] | null;
-  top_repos: { name: string; description: string; stars: number; url: string; language: string }[] | null;
+  top_repos:
+    | {
+        name: string;
+        description: string;
+        stars: number;
+        url: string;
+        language: string;
+      }[]
+    | null;
 }
 
 export async function getGitHubStats(): Promise<GitHubStats> {

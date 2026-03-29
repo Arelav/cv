@@ -25,7 +25,9 @@ export default async function GitHub() {
           </dd>
         </div>
         <div>
-          <dt className="text-sm text-zinc-500 dark:text-zinc-400">Followers</dt>
+          <dt className="text-sm text-zinc-500 dark:text-zinc-400">
+            Followers
+          </dt>
           <dd className="mt-1 text-2xl font-semibold tabular-nums">
             {stats.followers}
           </dd>
@@ -33,7 +35,10 @@ export default async function GitHub() {
       </dl>
 
       {topRepos.length > 0 && (
-        <ul className="mt-6 grid gap-3 sm:grid-cols-2" aria-label="Top repositories">
+        <ul
+          className="mt-6 grid gap-3 sm:grid-cols-2"
+          aria-label="Top repositories"
+        >
           {topRepos.map((repo) => (
             <li key={repo.name}>
               <a
@@ -51,7 +56,9 @@ export default async function GitHub() {
                 <div className="mt-auto flex items-center gap-3 pt-3 text-xs text-zinc-400 dark:text-zinc-500">
                   {repo.language && <span>{repo.language}</span>}
                   {repo.stars > 0 && (
-                    <span aria-label={`${repo.stars} stars`}>★ {repo.stars}</span>
+                    <span role="img" aria-label={`${repo.stars} stars`}>
+                      ★ {repo.stars}
+                    </span>
                   )}
                 </div>
               </a>

@@ -35,7 +35,10 @@ export default function Experience() {
             <ul className="mt-3 space-y-1.5 text-sm text-zinc-600 dark:text-zinc-300">
               {job.bullets.map((bullet) => (
                 <li key={bullet} className="flex gap-2">
-                  <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-zinc-400 dark:bg-zinc-500" aria-hidden="true" />
+                  <span
+                    className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-zinc-400 dark:bg-zinc-500"
+                    aria-hidden="true"
+                  />
                   {bullet}
                 </li>
               ))}

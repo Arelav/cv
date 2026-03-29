@@ -36,7 +36,8 @@ export default function Education() {
             <li key={lang.name}>
               <span className="font-medium">{lang.name}</span>
               <span className="text-zinc-400 dark:text-zinc-500">
-                {" "}— {lang.level}
+                {" "}
+                — {lang.level}
               </span>
             </li>
           ))}

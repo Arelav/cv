@@ -1,4 +1,4 @@
-import type { GitHubStats } from "@/lib/api";
+import type { GitHubStats } from "@/types/api";
 import GitHubHeading from "./GitHubHeading";
 import RepoCard from "./RepoCard";
 import Stats from "./Stats";

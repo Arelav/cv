@@ -1,4 +1,4 @@
-import type { LighthouseResult } from "@/lib/api";
+import type { LighthouseResult } from "@/types/api";
 import { formatMilliseconds } from "./format";
 import Gauge from "./Gauge";
 

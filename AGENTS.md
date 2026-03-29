@@ -2,10 +2,30 @@
 # This is NOT the Next.js you know
 
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
+
+## Where to find Next.js docs (use these, not training data)
+
+**Local (matches installed `next` version):**
+
+- `node_modules/next/dist/docs/` — full doc tree; App Router lives under `01-app/`.
+- Common files:
+  - `node_modules/next/dist/docs/01-app/06-fetching-data.md` — Server Components `fetch` / streaming
+  - `node_modules/next/dist/docs/01-app/10-error-handling.md` — expected errors vs `error.tsx` / `unstable_catchError`
+
+**Canonical URLs (same content as local; good for search or when `node_modules` is missing):**
+
+- [Fetching data](https://nextjs.org/docs/app/getting-started/fetching-data)
+- [Error handling](https://nextjs.org/docs/app/getting-started/error-handling)
+
+**Also:** follow `.agents/skills/nextjs/SKILL.md` (Context7) when you need API details or are unsure of syntax.
 <!-- END:nextjs-agent-rules -->
 
 > [!CAUTION]
 > Always use the right tool for the job — MCPs, skills, subagents, whatever fits best.
+
+Do **not** change Biome/ESLint/tsconfig/next config, **disable linter rules**, or add **`biome-ignore` / `eslint-disable` / `@ts-expect-error`** (or any in-file suppression) without explicit user permission (see `.agents/rules.md`). Do not rip out or replace the original app scaffold unless the user asked for that.
+
+When you add **project-wide** instructions, put them in `AGENTS.md` and/or `.agents/` (not only in a single chat) so every agent loads the same context via the includes below.
 
 @.agents/stack.md
 @.agents/rules.md

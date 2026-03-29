@@ -19,9 +19,7 @@ export default function Hero() {
         )}
       </div>
 
-      <p className="mt-4 max-w-2xl text-zinc-600 dark:text-zinc-300">
-        {person.bio}
-      </p>
+      <p className="text-prose mt-4 max-w-2xl">{person.bio}</p>
 
       <nav
         aria-label="Contact links"
@@ -29,7 +27,7 @@ export default function Hero() {
       >
         <a
           href={`mailto:${person.contact.email}`}
-          className="text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
+          className="link-subtle"
         >
           {person.contact.email}
         </a>
@@ -46,7 +44,7 @@ export default function Hero() {
           href={person.contact.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
+          className="link-subtle"
         >
           LinkedIn
         </a>
@@ -57,7 +55,7 @@ export default function Hero() {
           href={person.contact.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
+          className="link-subtle"
         >
           GitHub
         </a>

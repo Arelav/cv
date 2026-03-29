@@ -17,9 +17,7 @@ export default function Experience() {
               <div>
                 <span className="font-medium">{job.role}</span>
                 <span className="text-zinc-400 dark:text-zinc-500"> · </span>
-                <span className="text-zinc-600 dark:text-zinc-300">
-                  {job.company}
-                </span>
+                <span className="text-prose">{job.company}</span>
               </div>
               <div className="text-sm text-zinc-400 dark:text-zinc-500 sm:text-right">
                 <span>{job.period}</span>
@@ -32,7 +30,7 @@ export default function Experience() {
               </div>
             </div>
 
-            <ul className="mt-3 space-y-1.5 text-sm text-zinc-600 dark:text-zinc-300">
+            <ul className="text-prose mt-3 space-y-1.5 text-sm">
               {job.bullets.map((bullet) => (
                 <li key={bullet} className="flex gap-2">
                   <span

@@ -1,4 +1,6 @@
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { getGitHubStats } from "@/lib/api";
+import Icon from "./Icon";
 
 export default async function GitHub() {
   const stats = await getGitHubStats();
@@ -57,8 +59,8 @@ export default async function GitHub() {
                   {repo.language && <span>{repo.language}</span>}
                   {repo.stars > 0 && (
                     <>
-                      <span aria-hidden="true">★ {repo.stars}</span>
-                      <span className="sr-only">{repo.stars} stars</span>
+                      <Icon icon={faStar} aria-label={`${repo.stars} stars`} />
+                      <span aria-hidden="true">{repo.stars}</span>
                     </>
                   )}
                 </div>

@@ -6,14 +6,12 @@ export interface GitHubStats {
   public_repos: number;
   followers: number;
   total_stars: number;
-  top_languages: { name: string; repos: number }[];
-  top_repos: { name: string; description: string; stars: number; url: string; language: string }[];
+  top_languages: { name: string; repos: number }[] | null;
+  top_repos: { name: string; description: string; stars: number; url: string; language: string }[] | null;
 }
 
 export async function getGitHubStats(): Promise<GitHubStats> {
-  const res = await fetch(`${API_URL}/github/stats`, {
-    next: { revalidate: 3600 },
-  });
+  const res = await fetch(`${API_URL}/github/stats`);
   if (!res.ok) throw new Error(`Failed to fetch GitHub stats: ${res.status}`);
   return res.json();
 }

@@ -1,12 +1,13 @@
-import type { GitHubStats } from "@/lib/api";
+import { getGitHubStats } from "@/lib/api";
 
-export default function GitHub({ stats }: { stats: GitHubStats }) {
+export default async function GitHub() {
+  const stats = await getGitHubStats();
+  const topRepos = stats.top_repos ?? [];
+  const topLanguages = stats.top_languages ?? [];
+
   return (
     <section aria-labelledby="github-heading">
-      <h2
-        id="github-heading"
-        className="text-xl font-semibold tracking-tight"
-      >
+      <h2 id="github-heading" className="text-xl font-semibold tracking-tight">
         GitHub
       </h2>
 
@@ -31,9 +32,9 @@ export default function GitHub({ stats }: { stats: GitHubStats }) {
         </div>
       </dl>
 
-      {stats.top_repos.length > 0 && (
+      {topRepos.length > 0 && (
         <ul className="mt-6 grid gap-3 sm:grid-cols-2" aria-label="Top repositories">
-          {stats.top_repos.map((repo) => (
+          {topRepos.map((repo) => (
             <li key={repo.name}>
               <a
                 href={repo.url}
@@ -59,16 +60,13 @@ export default function GitHub({ stats }: { stats: GitHubStats }) {
         </ul>
       )}
 
-      {stats.top_languages.length > 0 && (
+      {topLanguages.length > 0 && (
         <div className="mt-6">
           <h3 className="text-sm font-medium text-zinc-500 dark:text-zinc-400">
             Top languages
           </h3>
-          <ul
-            className="mt-2 flex flex-wrap gap-2"
-            aria-label="Top languages"
-          >
-            {stats.top_languages.map((lang) => (
+          <ul className="mt-2 flex flex-wrap gap-2" aria-label="Top languages">
+            {topLanguages.map((lang) => (
               <li
                 key={lang.name}
                 className="rounded-full bg-zinc-100 px-3 py-1 text-sm dark:bg-zinc-800"

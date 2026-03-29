@@ -5,6 +5,8 @@ import TopLanguages from "./TopLanguages";
 
 export default async function GitHub() {
   const stats = await getGitHubStats();
+  if (!stats) return null;
+
   const topRepos = stats.top_repos ?? [];
   const topLanguages = stats.top_languages ?? [];
 

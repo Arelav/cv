@@ -4,14 +4,17 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface Props {
-  count: number;
+  stars: number;
 }
 
-export default function StarCount({ count }: Props) {
-  if (count <= 0) return null;
+export default function StarCount({ stars }: Props) {
   return (
-    <span>
-      <FontAwesomeIcon icon={faStar} aria-hidden /> {count}
-    </span>
+    stars > 0 && (
+      <>
+        <FontAwesomeIcon icon={faStar} aria-hidden />
+        <span className="sr-only">stars: </span>
+        {stars}
+      </>
+    )
   );
 }

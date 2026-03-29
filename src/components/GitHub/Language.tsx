@@ -3,6 +3,5 @@ interface Props {
 }
 
 export default function Language({ language }: Props) {
-  if (!language) return null;
-  return <span>{language}</span>;
+  return language && <span>{language}</span>;
 }

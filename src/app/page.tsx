@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import GitHub from "@/components/GitHub";
 import Lighthouse from "@/components/Lighthouse";
@@ -41,14 +40,10 @@ export default function Home() {
 
       <div className="mt-16 space-y-14">
         <ErrorBoundary>
-          <Suspense>
-            <Lighthouse />
-          </Suspense>
+          <Lighthouse />
         </ErrorBoundary>
         <ErrorBoundary>
-          <Suspense>
-            <GitHub />
-          </Suspense>
+          <GitHub />
         </ErrorBoundary>
       </div>
     </main>

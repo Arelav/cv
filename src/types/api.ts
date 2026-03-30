@@ -14,17 +14,17 @@ export interface GitHubRepoSummary {
 export interface GitHubStats {
   username: string;
   name: string;
-  public_repos: number;
+  publicRepos: number;
   followers: number;
-  total_stars: number;
-  top_languages: GitHubLanguageStat[] | null;
-  top_repos: GitHubRepoSummary[] | null;
+  totalStars: number;
+  topLanguages: GitHubLanguageStat[] | null;
+  topRepos: GitHubRepoSummary[] | null;
 }
 
 export interface LighthouseResult {
   performance: number;
   accessibility: number;
-  best_practices: number;
+  bestPractices: number;
   seo: number;
   metrics: {
     fcp: number;

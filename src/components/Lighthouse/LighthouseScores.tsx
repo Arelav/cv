@@ -8,7 +8,7 @@ export default function LighthouseScores({ data }: Props) {
   const {
     performance,
     accessibility,
-    best_practices,
+    bestPractices,
     seo,
     metrics: { fcp, lcp, tbt, cls, tti },
   } = data;
@@ -26,7 +26,7 @@ export default function LighthouseScores({ data }: Props) {
       <div className="mt-6 grid grid-cols-4 gap-3 sm:gap-6">
         <Gauge label="Performance" score={performance} />
         <Gauge label="Accessibility" score={accessibility} />
-        <Gauge label="Best Practices" score={best_practices} />
+        <Gauge label="Best Practices" score={bestPractices} />
         <Gauge label="SEO" score={seo} />
       </div>
 

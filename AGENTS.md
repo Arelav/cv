@@ -9,8 +9,8 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 - `node_modules/next/dist/docs/` — full doc tree; App Router lives under `01-app/`.
 - Common files:
-  - `node_modules/next/dist/docs/01-app/06-fetching-data.md` — Server Components `fetch` / streaming
-  - `node_modules/next/dist/docs/01-app/10-error-handling.md` — expected errors vs `error.tsx` / `unstable_catchError`
+  - `node_modules/next/dist/docs/01-app/01-getting-started/06-fetching-data.md` — Server Components `fetch` / streaming
+  - `node_modules/next/dist/docs/01-app/01-getting-started/10-error-handling.md` — expected errors vs `error.tsx` / `unstable_catchError`
 
 **Canonical URLs (same content as local; good for search or when `node_modules` is missing):**
 

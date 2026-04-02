@@ -17,7 +17,7 @@ export default function MobileNavPanel({ open, panelId, onClose }: Props) {
     <div id={panelId} className="md:hidden">
       <div className="w-full">
         <div
-          aria-hidden={!open}
+          inert={!open}
           className={[
             "overflow-hidden",
             "transition-[max-height,opacity,transform] duration-300 ease-out",

@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import GitHub from "@/components/GitHub";
 import Lighthouse from "@/components/Lighthouse";
@@ -40,10 +41,14 @@ export default function Home() {
 
       <div className="mt-20 space-y-16">
         <ErrorBoundary>
-          <Lighthouse />
+          <Suspense fallback={<div className="h-48 animate-pulse rounded-2xl bg-white/20" />}>
+            <Lighthouse />
+          </Suspense>
         </ErrorBoundary>
         <ErrorBoundary>
-          <GitHub />
+          <Suspense fallback={<div className="h-64 animate-pulse rounded-2xl bg-white/20" />}>
+            <GitHub />
+          </Suspense>
         </ErrorBoundary>
       </div>
     </main>

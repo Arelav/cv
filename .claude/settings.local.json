@@ -3,7 +3,11 @@
     "allow": [
       "Read(//Users/valerykh/projects/personal/cv-api/**)",
       "WebSearch",
-      "Bash(go vet:*)"
+      "Bash(go vet:*)",
+      "Bash(jj log:*)",
+      "Bash(jj diff:*)",
+      "Bash(jj new:*)",
+      "Bash(jj restore:*)"
     ]
   }
 }

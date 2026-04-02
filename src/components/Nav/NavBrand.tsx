@@ -17,6 +17,8 @@ export default function NavBrand() {
         width={36}
         height={36}
         className="size-9 shrink-0 rounded-full object-cover"
+        priority
+        loading="eager"
       />
       <span
         className="inline-flex size-10 items-center justify-center rounded-lg text-zinc-700 transition-[background-color,color] hover:bg-white/80 hover:text-zinc-900 dark:text-zinc-200 dark:hover:bg-white/10 dark:hover:text-white"

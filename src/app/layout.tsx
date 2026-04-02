@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Nav from "@/components/Nav";
 import ParallaxBackdrop from "@/components/ParallaxBackdrop";
@@ -19,6 +19,17 @@ export const metadata: Metadata = {
   description: "Software engineer",
 };
 
+/** Edge-to-edge on iOS; theme-color reduces white browser chrome against page background. */
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f0f9ff" },
+    { media: "(prefers-color-scheme: dark)", color: "#000000" },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -27,9 +38,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} min-h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
-      <body className="relative min-h-full text-zinc-900 dark:text-zinc-50">
+      <body>
         <ParallaxBackdrop />
         <div className="relative z-10 min-h-full">
           <Nav />

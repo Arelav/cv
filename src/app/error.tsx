@@ -14,7 +14,7 @@ export default function AppError({
   }, [error]);
 
   return (
-    <main className="mx-auto w-full max-w-3xl px-4 sm:px-6 py-16 sm:py-24">
+    <main className="mx-auto w-full max-w-3xl px-5 sm:px-8 py-20 sm:py-28">
       <h1 className="text-2xl font-semibold tracking-tight">
         Something went wrong
       </h1>

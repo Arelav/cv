@@ -14,7 +14,7 @@ export default function TopLanguages({ languages }: Props) {
         {languages.map((lang) => (
           <li
             key={lang.name}
-            className="rounded-full bg-zinc-100 px-3 py-1 text-sm dark:bg-zinc-800"
+            className="rounded-full border border-white/25 bg-white/10 px-3 py-1 text-sm text-zinc-800 shadow-sm backdrop-blur-xl backdrop-saturate-150 dark:border-white/[0.12] dark:bg-black/25 dark:text-zinc-100"
           >
             {lang.name}
           </li>

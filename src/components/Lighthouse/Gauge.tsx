@@ -18,7 +18,7 @@ export default function Gauge({ label, score }: Props) {
   const progress = (rounded / 100) * CIRCUMFERENCE;
 
   return (
-    <div className="flex flex-col items-center gap-2">
+    <div className="frosted-glass flex flex-col items-center gap-2 rounded-2xl p-4">
       <svg
         viewBox="0 0 100 100"
         className="w-full max-w-20 sm:max-w-24"

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Nav from "@/components/Nav";
+import ParallaxBackdrop from "@/components/ParallaxBackdrop";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -26,11 +27,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} min-h-full antialiased`}
     >
-      <body className="min-h-full bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-50">
-        <Nav />
-        {children}
+      <body className="relative min-h-full text-zinc-900 dark:text-zinc-50">
+        <ParallaxBackdrop />
+        <div className="relative z-10 min-h-full">
+          <Nav />
+          {children}
+        </div>
       </body>
     </html>
   );

@@ -1,6 +1,17 @@
 @import "tailwindcss";
 
+html {
+  overflow-x: hidden;
+}
+
 @theme inline {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+}
+
+@layer components {
+  .frosted-glass {
+    @apply border border-white/45 bg-white/35 shadow-sm backdrop-blur-xl backdrop-saturate-150;
+    @apply dark:border-white/[0.1] dark:bg-black/35 dark:shadow-[inset_0_1px_0_0_rgb(255_255_255/0.05)];
+  }
 }

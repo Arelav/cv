@@ -32,22 +32,43 @@ export default function Nav() {
   }, [menuOpen]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-zinc-200 bg-white/90 backdrop-blur-md dark:border-zinc-800 dark:bg-zinc-950/90">
-      <div className="mx-auto w-full max-w-3xl px-4 sm:px-6 flex min-h-14 items-center justify-between gap-3">
-        <NavBrand />
-        <DesktopNav />
-        <MobileMenuButton
-          menuOpen={menuOpen}
-          panelId={panelId}
-          onToggle={() => setMenuOpen((o) => !o)}
-        />
-      </div>
+    <header className="sticky top-0 z-50">
+      <div className="mx-auto w-full max-w-none px-0 py-0 md:max-w-3xl md:px-7 md:py-3 lg:px-8">
+        <div
+          className={[
+            "frosted-glass",
+            // Mobile: edge-to-edge, no rounding, no side borders.
+            "rounded-none border-x-0",
+            // Desktop+: card container again.
+            "md:rounded-2xl md:border-x",
+          ].join(" ")}
+        >
+          <div className="flex min-h-16 items-center justify-between gap-3 py-2 px-5">
+            <NavBrand />
+            <DesktopNav />
+            <MobileMenuButton
+              menuOpen={menuOpen}
+              panelId={panelId}
+              onToggle={() => setMenuOpen((o) => !o)}
+            />
+          </div>
 
-      <MobileNavPanel
-        open={menuOpen}
-        panelId={panelId}
-        onClose={() => setMenuOpen(false)}
-      />
+          <div
+            className={[
+              "md:hidden",
+              menuOpen
+                ? "border-t border-white/45 dark:border-white/[0.1]"
+                : "",
+            ].join(" ")}
+          >
+            <MobileNavPanel
+              open={menuOpen}
+              panelId={panelId}
+              onClose={() => setMenuOpen(false)}
+            />
+          </div>
+        </div>
+      </div>
     </header>
   );
 }

@@ -19,7 +19,7 @@ export default function NavBrand() {
         className="size-9 shrink-0 rounded-full object-cover"
       />
       <span
-        className="inline-flex size-10 items-center justify-center rounded-lg text-zinc-600 transition-colors hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-zinc-100"
+        className="inline-flex size-10 items-center justify-center rounded-lg text-zinc-700 transition-[background-color,color] hover:bg-white/80 hover:text-zinc-900 dark:text-zinc-200 dark:hover:bg-white/10 dark:hover:text-white"
         aria-hidden
       >
         <FontAwesomeIcon icon={faHouse} className="size-5" />

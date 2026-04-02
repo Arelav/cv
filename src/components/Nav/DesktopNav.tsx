@@ -2,13 +2,13 @@ import Link from "next/link";
 import { person } from "@/lib/cv-data";
 
 const navLinkClass =
-  "text-sm text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-zinc-100";
+  "inline-flex items-center rounded-lg px-3 py-2 text-sm text-zinc-700 transition-[background-color,color] hover:bg-white/80 hover:text-zinc-900 dark:text-zinc-200 dark:hover:bg-white/10 dark:hover:text-white";
 
 export default function DesktopNav() {
   return (
     <nav
       aria-label="Site navigation"
-      className="hidden md:flex md:items-center md:gap-6"
+      className="hidden md:flex md:items-center md:gap-2"
     >
       <Link href="/resume" className={navLinkClass}>
         Resume

@@ -16,7 +16,7 @@ export default function MobileMenuButton({
     <div className="md:hidden">
       <button
         type="button"
-        className="inline-flex size-11 items-center justify-center rounded-lg text-zinc-700 outline-offset-2 hover:bg-zinc-100 focus-visible:outline focus-visible:ring-2 focus-visible:ring-zinc-400 dark:text-zinc-200 dark:hover:bg-zinc-800 dark:focus-visible:ring-zinc-500"
+        className="inline-flex size-11 items-center justify-center rounded-lg text-zinc-800 outline-offset-2 transition-[background-color,color] hover:bg-white/80 focus-visible:outline focus-visible:ring-2 focus-visible:ring-zinc-400 dark:text-zinc-200 dark:hover:bg-white/10 dark:focus-visible:ring-zinc-500"
         aria-expanded={menuOpen}
         aria-controls={panelId}
         aria-label={menuOpen ? "Close menu" : "Open menu"}

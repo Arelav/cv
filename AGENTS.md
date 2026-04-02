@@ -27,6 +27,8 @@ Do **not** change Biome/ESLint/tsconfig/next config, **disable linter rules**, o
 
 When you add **project-wide** instructions, put them in `AGENTS.md` and/or `.agents/` (not only in a single chat) so every agent loads the same context via the includes below.
 
+**React Compiler** is enabled (`reactCompiler: true` in `next.config.ts`). Do not pile on `useMemo`, `useCallback`, or `React.memo` “for performance” — see `.agents/stack.md` and `.agents/rules.md`.
+
 @.agents/stack.md
 @.agents/rules.md
 @.agents/components.md

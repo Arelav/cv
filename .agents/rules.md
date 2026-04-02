@@ -10,6 +10,7 @@
 - **Fetch `Response` naming:** Do not name the result of `fetch()` `res`. Use `response` (or another explicit name).
 - **Comments:** Do not add JSDoc, `//`, or block comments that restate the code, narrate obvious steps, or duplicate what types already say. Comment only when behavior is genuinely non-obvious without it.
 - **Next.js + backend GETs:** Before changing fetch/error patterns, read `node_modules/next/dist/docs/01-app/01-getting-started/06-fetching-data.md` and `10-error-handling.md`. Same on the web: [fetching data](https://nextjs.org/docs/app/getting-started/fetching-data), [error handling](https://nextjs.org/docs/app/getting-started/error-handling). In Server Components: plain `fetch`, `await response.json()`, then `if (!response.ok)` and return UI — no `try/catch` for the happy path, no fetch wrapper. On `!response.ok`, render `*FetchError` with a generic message (do not pass through HTTP status codes or backend error bodies). `API_URL` in env (e.g. `.env.local`).
+- **React Compiler:** This app compiles with the React Compiler (see `.agents/stack.md`). Do not add `useMemo` / `useCallback` / `memo` for generic optimization. If something must update every frame without going through React render (scroll, rAF), use refs and write to the DOM directly.
 - Prefer Server Components; use `"use client"` only when necessary
 - No `useEffect` for data fetching
 - All API calls go to the Go backend (`cv-api`)

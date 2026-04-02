@@ -22,7 +22,7 @@ export default function GitHubLoaded({ stats }: Props) {
 
       {topRepos.length > 0 && (
         <ul
-          className="mt-6 grid gap-3 sm:grid-cols-2"
+          className="mt-8 grid gap-5 sm:grid-cols-2"
           aria-label="Pinned repositories"
         >
           {topRepos.map((repo) => (

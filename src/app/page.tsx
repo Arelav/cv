@@ -5,7 +5,7 @@ import { person } from "@/lib/cv-data";
 
 export default function Home() {
   return (
-    <main className="mx-auto w-full max-w-3xl px-4 sm:px-6 py-16 sm:py-24">
+    <main className="mx-auto w-full max-w-3xl px-5 sm:px-8 pt-9 pb-20 sm:pt-12 sm:pb-28">
       <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
         {person.name}
       </h1>
@@ -13,7 +13,7 @@ export default function Home() {
         {person.title}
       </p>
 
-      <div className="mt-8 max-w-xl space-y-4 text-zinc-700 dark:text-zinc-300">
+      <div className="mt-10 max-w-xl space-y-5 text-zinc-700 dark:text-zinc-300">
         <p>
           Senior frontend engineer with over a decade of building web products —
           mostly React and TypeScript, leading teams, reviewing code, and caring
@@ -38,7 +38,7 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="mt-16 space-y-14">
+      <div className="mt-20 space-y-16">
         <ErrorBoundary>
           <Lighthouse />
         </ErrorBoundary>

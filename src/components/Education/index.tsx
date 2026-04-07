@@ -1,13 +1,12 @@
 import { MetaSeparator } from "@/components/MetaSeparator";
 import type { EducationItem, LanguageItem } from "@/lib/content";
 
-export default function Education({
-  education,
-  languages,
-}: {
+interface Props {
   education: EducationItem[];
   languages: LanguageItem[];
-}) {
+}
+
+export default function Education({ education, languages }: Props) {
   return (
     <section aria-labelledby="education-heading">
       <h2

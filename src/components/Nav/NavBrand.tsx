@@ -4,7 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Person } from "@/lib/content";
 
-export default function NavBrand({ person }: { person: Person }) {
+interface Props {
+  person: Person;
+}
+
+export default function NavBrand({ person }: Props) {
   return (
     <Link
       href="/"

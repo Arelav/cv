@@ -1,6 +1,6 @@
 "use client";
 
-import clsx from "clsx";
+import { cx } from "class-variance-authority";
 import { useEffect } from "react";
 
 const layers = [
@@ -53,13 +53,13 @@ interface LayerProps {
 
 function Layer({ blur, light, dark, extra, cls }: LayerProps) {
   return (
-    <div className={clsx("parallax-layer", cls)}>
-      <div className={clsx("absolute inset-0", blur)}>
+    <div className={cx("parallax-layer", cls)}>
+      <div className={cx("absolute inset-0", blur)}>
         <div
-          className={clsx("absolute inset-0", extra ?? "dark:hidden", light)}
+          className={cx("absolute inset-0", extra ?? "dark:hidden", light)}
         />
         {dark && (
-          <div className={clsx("absolute inset-0 hidden dark:block", dark)} />
+          <div className={cx("absolute inset-0 hidden dark:block", dark)} />
         )}
       </div>
     </div>

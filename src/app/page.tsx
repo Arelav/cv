@@ -1,8 +1,9 @@
 import { Suspense } from "react";
+import ReactMarkdown from "react-markdown";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import GitHub from "@/components/GitHub";
 import Lighthouse from "@/components/Lighthouse";
-import { person } from "@/lib/cv-data";
+import { introMarkdown, person } from "@/lib/content";
 
 export default function Home() {
   return (
@@ -15,38 +16,31 @@ export default function Home() {
       </p>
 
       <div className="mt-10 max-w-xl space-y-5 text-zinc-700 dark:text-zinc-300">
-        <p>
-          Senior frontend engineer with over a decade of building web products —
-          mostly React and TypeScript, leading teams, reviewing code, and caring
-          too much about the details that make a codebase enjoyable to work in.
-        </p>
-        <p>
-          Lately I've been learning Go. Something I've been curious about for a
-          long time — simple syntax, tiny binaries, type-safe with no manual
-          memory management. The backend for this site is written in Go.
-        </p>
-        <p>
-          At work I care about three things: good people to build with, problems
-          worth solving, and a codebase you actually enjoy opening in the
-          morning.
-        </p>
-        <p>
-          Outside of work I'm a husband and father of two daughters. Four Maine
-          Coon cats and a Maremmano Abruzzese dog run the house. We just pay the
-          bills. I have a Dingwall bass I saved up for — played folk-rock and
-          then a cover band until COVID ended that. Now in a new city and
-          looking for the next one.
-        </p>
+        <ReactMarkdown
+          components={{
+            p: ({ children }) => <p>{children}</p>,
+          }}
+        >
+          {introMarkdown}
+        </ReactMarkdown>
       </div>
 
       <div className="mt-20 space-y-16">
         <ErrorBoundary>
-          <Suspense fallback={<div className="h-48 animate-pulse rounded-2xl bg-white/20" />}>
+          <Suspense
+            fallback={
+              <div className="h-48 animate-pulse rounded-2xl bg-white/20" />
+            }
+          >
             <Lighthouse />
           </Suspense>
         </ErrorBoundary>
         <ErrorBoundary>
-          <Suspense fallback={<div className="h-64 animate-pulse rounded-2xl bg-white/20" />}>
+          <Suspense
+            fallback={
+              <div className="h-64 animate-pulse rounded-2xl bg-white/20" />
+            }
+          >
             <GitHub />
           </Suspense>
         </ErrorBoundary>

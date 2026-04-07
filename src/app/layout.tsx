@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Nav from "@/components/Nav";
 import ParallaxBackdrop from "@/components/ParallaxBackdrop";
+import { person } from "@/lib/content";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -14,10 +15,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Valery Kharshats — CV",
-  description: "Software engineer",
-};
+export function generateMetadata(): Metadata {
+  return {
+    title: `${person.name} — CV`,
+    description: person.title,
+  };
+}
 
 /** Edge-to-edge on iOS; theme-color reduces white browser chrome against page background. */
 export const viewport: Viewport = {
@@ -43,7 +46,7 @@ export default function RootLayout({
       <body>
         <ParallaxBackdrop />
         <div className="relative z-10 min-h-full">
-          <Nav />
+          <Nav person={person} />
           {children}
         </div>
       </body>

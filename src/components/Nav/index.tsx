@@ -3,12 +3,13 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useState } from "react";
 import { useMedia } from "react-use";
+import type { Person } from "@/lib/content";
 import DesktopNav from "./DesktopNav";
 import MobileMenuButton from "./MobileMenuButton";
 import MobileNavPanel from "./MobileNavPanel";
 import NavBrand from "./NavBrand";
 
-export default function Nav() {
+export default function Nav({ person }: { person: Person }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
   const panelId = useId();
@@ -44,8 +45,8 @@ export default function Nav() {
           ].join(" ")}
         >
           <div className="flex min-h-16 items-center justify-between gap-3 py-2 px-5">
-            <NavBrand />
-            <DesktopNav />
+            <NavBrand person={person} />
+            <DesktopNav person={person} />
             <MobileMenuButton
               menuOpen={menuOpen}
               panelId={panelId}
@@ -62,6 +63,7 @@ export default function Nav() {
             ].join(" ")}
           >
             <MobileNavPanel
+              person={person}
               open={menuOpen}
               panelId={panelId}
               onClose={() => setMenuOpen(false)}

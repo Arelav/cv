@@ -42,6 +42,11 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# Velite — generated data + processed assets (rebuilt by prebuild / dev:velite)
+# https://velite.js.org/guide/quick-start
+.velite
+public/static
+
 # OpenNext
 .open-next
 

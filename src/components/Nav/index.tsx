@@ -3,7 +3,7 @@
 import { cx } from "class-variance-authority";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useState } from "react";
-import { useMedia } from "react-use";
+import { useMediaQuery } from "usehooks-ts";
 import type { Person } from "@/lib/content";
 import DesktopNav from "./DesktopNav";
 import MobileMenuButton from "./MobileMenuButton";
@@ -16,17 +16,17 @@ interface Props {
 
 export default function Nav({ person }: Props) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const isMdUp = useMediaQuery("(min-width: 768px)");
   const pathname = usePathname();
   const panelId = useId();
-  const isMdUp = useMedia("(min-width: 768px)", false);
-
-  useEffect(() => {
-    if (pathname) setMenuOpen(false);
-  }, [pathname]);
 
   useEffect(() => {
     if (isMdUp) setMenuOpen(false);
   }, [isMdUp]);
+
+  useEffect(() => {
+    if (pathname) setMenuOpen(false);
+  }, [pathname]);
 
   useEffect(() => {
     if (!menuOpen) return;

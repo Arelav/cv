@@ -5,7 +5,7 @@ interface Props {
   menuOpen: boolean;
   panelId: string;
   onToggle: () => void;
-};
+}
 
 export default function MobileMenuButton({
   menuOpen,

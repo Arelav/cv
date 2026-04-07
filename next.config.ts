@@ -2,6 +2,7 @@ import { withSentryConfig } from "@sentry/nextjs";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  /* config options here */
   reactCompiler: true,
 };
 
@@ -42,7 +43,3 @@ export default withSentryConfig(nextConfig, {
     excludeDebugStatements: true,
   },
 });
-
-if (!process.env.VERCEL) {
-  import("@opennextjs/cloudflare").then((m) => m.initOpenNextCloudflareForDev());
-}

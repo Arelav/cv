@@ -24,7 +24,7 @@ interface Props {
   open: boolean;
   panelId: string;
   onClose: () => void;
-};
+}
 
 export default function MobileNavPanel({
   person,

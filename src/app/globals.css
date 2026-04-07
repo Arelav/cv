@@ -120,17 +120,49 @@
   }
   .parallax-bg-d-light {
     background:
-      radial-gradient(circle 42% at 14% 32%, rgb(59 130 246 / 0.34), transparent 68%),
-      radial-gradient(circle 38% at 86% 22%, rgb(96 165 250 / 0.28), transparent 64%),
-      radial-gradient(ellipse 48% 40% at 68% 78%, rgb(147 197 253 / 0.22), transparent 58%),
-      radial-gradient(circle 36% at 44% 88%, rgb(14 165 233 / 0.2), transparent 56%);
+      radial-gradient(
+        circle 42% at 14% 32%,
+        rgb(59 130 246 / 0.34),
+        transparent 68%
+      ),
+      radial-gradient(
+        circle 38% at 86% 22%,
+        rgb(96 165 250 / 0.28),
+        transparent 64%
+      ),
+      radial-gradient(
+        ellipse 48% 40% at 68% 78%,
+        rgb(147 197 253 / 0.22),
+        transparent 58%
+      ),
+      radial-gradient(
+        circle 36% at 44% 88%,
+        rgb(14 165 233 / 0.2),
+        transparent 56%
+      );
   }
   .parallax-bg-d-dark {
     background:
-      radial-gradient(circle 40% at 12% 28%, rgb(29 78 216 / 0.44), transparent 65%),
-      radial-gradient(circle 36% at 90% 20%, rgb(14 165 233 / 0.32), transparent 60%),
-      radial-gradient(ellipse 46% 38% at 62% 80%, rgb(37 99 235 / 0.28), transparent 55%),
-      radial-gradient(circle 34% at 48% 90%, rgb(7 28 80 / 0.5), transparent 52%);
+      radial-gradient(
+        circle 40% at 12% 28%,
+        rgb(29 78 216 / 0.44),
+        transparent 65%
+      ),
+      radial-gradient(
+        circle 36% at 90% 20%,
+        rgb(14 165 233 / 0.32),
+        transparent 60%
+      ),
+      radial-gradient(
+        ellipse 46% 38% at 62% 80%,
+        rgb(37 99 235 / 0.28),
+        transparent 55%
+      ),
+      radial-gradient(
+        circle 34% at 48% 90%,
+        rgb(7 28 80 / 0.5),
+        transparent 52%
+      );
   }
   .parallax-bg-e-light {
     background: linear-gradient(
@@ -156,10 +188,20 @@
   }
 
   .parallax-vignette-light {
-    background: radial-gradient(ellipse 140% 120% at 50% 45%, transparent 48%, rgb(0 0 30 / 0.28) 82%, rgb(0 0 20 / 0.48) 100%);
+    background: radial-gradient(
+      ellipse 140% 120% at 50% 45%,
+      transparent 48%,
+      rgb(0 0 30 / 0.28) 82%,
+      rgb(0 0 20 / 0.48) 100%
+    );
   }
   .parallax-vignette-dark {
-    background: radial-gradient(ellipse 140% 120% at 50% 45%, transparent 38%, rgb(0 0 0 / 0.62) 80%, rgb(0 0 0 / 0.88) 100%);
+    background: radial-gradient(
+      ellipse 140% 120% at 50% 45%,
+      transparent 38%,
+      rgb(0 0 0 / 0.62) 80%,
+      rgb(0 0 0 / 0.88) 100%
+    );
   }
 }
 
@@ -171,21 +213,41 @@
         calc(var(--scroll-y, 0px) * var(--lx, 0)),
         calc(var(--scroll-y, 0px) * var(--ly, 0)),
         0
-      ) scale(1.12);
+      )
+      scale(1.12);
 
     @media (prefers-reduced-motion: reduce) {
       transform: translate3d(
           calc(var(--scroll-y, 0px) * var(--lx, 0) * 0.15),
           calc(var(--scroll-y, 0px) * var(--ly, 0) * 0.15),
           0
-        ) scale(1.12);
+        )
+        scale(1.12);
     }
   }
 
-  .parallax-layer-0 { --lx:  0.18; --ly: -0.55; }
-  .parallax-layer-1 { --lx: -0.32; --ly:  1.55; }
-  .parallax-layer-2 { --lx: -0.16; --ly:  0.85; }
-  .parallax-layer-3 { --lx:  0.36; --ly: -2.7;  }
-  .parallax-layer-4 { --lx: -0.2;  --ly:  1.05; }
-  .parallax-layer-5 { --lx:  0.13; --ly: -1.2;  }
+  .parallax-layer-0 {
+    --lx: 0.18;
+    --ly: -0.55;
+  }
+  .parallax-layer-1 {
+    --lx: -0.32;
+    --ly: 1.55;
+  }
+  .parallax-layer-2 {
+    --lx: -0.16;
+    --ly: 0.85;
+  }
+  .parallax-layer-3 {
+    --lx: 0.36;
+    --ly: -2.7;
+  }
+  .parallax-layer-4 {
+    --lx: -0.2;
+    --ly: 1.05;
+  }
+  .parallax-layer-5 {
+    --lx: 0.13;
+    --ly: -1.2;
+  }
 }

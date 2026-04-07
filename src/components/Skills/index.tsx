@@ -1,6 +1,10 @@
 import type { SkillsByCategory } from "@/lib/content";
 
-export default function Skills({ skills }: { skills: SkillsByCategory }) {
+interface Props {
+  skills: SkillsByCategory;
+}
+
+export default function Skills({ skills }: Props) {
   return (
     <section aria-labelledby="skills-heading">
       <h2 id="skills-heading" className="text-xl font-semibold tracking-tight">

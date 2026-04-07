@@ -1,5 +1,6 @@
 "use client";
 
+import clsx from "clsx";
 import Link from "next/link";
 import type { Person } from "@/lib/content";
 
@@ -24,14 +25,14 @@ export default function MobileNavPanel({
       <div className="w-full">
         <div
           inert={!open}
-          className={[
+          className={clsx(
             "overflow-hidden",
             "transition-[max-height,opacity,transform] duration-300 ease-out",
             "will-change-[max-height,opacity,transform]",
             open
               ? "pointer-events-auto max-h-[520px] opacity-100 translate-y-0"
               : "pointer-events-none max-h-0 opacity-0 -translate-y-2",
-          ].join(" ")}
+          )}
         >
           <div className="p-2">
             <ul className="grid gap-1">

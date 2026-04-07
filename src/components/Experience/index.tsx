@@ -1,7 +1,11 @@
 import { MetaSeparator } from "@/components/MetaSeparator";
 import type { ExperienceJob } from "@/lib/content";
 
-export default function Experience({ jobs }: { jobs: ExperienceJob[] }) {
+interface Props {
+  jobs: ExperienceJob[];
+}
+
+export default function Experience({ jobs }: Props) {
   return (
     <section aria-labelledby="experience-heading">
       <h2

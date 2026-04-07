@@ -4,7 +4,11 @@ import type { Person } from "@/lib/content";
 const navLinkClass =
   "inline-flex items-center rounded-lg px-3 py-2 text-sm text-zinc-700 transition-[background-color,color] hover:bg-white/80 hover:text-zinc-900 dark:text-zinc-200 dark:hover:bg-white/10 dark:hover:text-white";
 
-export default function DesktopNav({ person }: { person: Person }) {
+interface Props {
+  person: Person;
+}
+
+export default function DesktopNav({ person }: Props) {
   return (
     <nav
       aria-label="Site navigation"

@@ -1,7 +1,11 @@
 import { MetaSeparator } from "@/components/MetaSeparator";
 import type { Person } from "@/lib/content";
 
-export default function Hero({ person }: { person: Person }) {
+interface Props {
+  person: Person;
+}
+
+export default function Hero({ person }: Props) {
   return (
     <header className="border-b border-zinc-200 pb-8 dark:border-zinc-800">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">

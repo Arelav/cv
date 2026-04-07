@@ -16,13 +16,7 @@ export default function Home() {
       </p>
 
       <div className="mt-10 max-w-xl space-y-5 text-zinc-700 dark:text-zinc-300">
-        <ReactMarkdown
-          components={{
-            p: ({ children }) => <p>{children}</p>,
-          }}
-        >
-          {introMarkdown}
-        </ReactMarkdown>
+        <ReactMarkdown>{introMarkdown}</ReactMarkdown>
       </div>
 
       <div className="mt-20 space-y-16">

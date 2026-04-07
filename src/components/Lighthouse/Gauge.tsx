@@ -18,10 +18,10 @@ export default function Gauge({ label, score }: Props) {
   const progress = (rounded / 100) * CIRCUMFERENCE;
 
   return (
-    <div className="frosted-glass flex flex-col items-center gap-2 rounded-2xl p-4">
+    <div className="frosted-glass flex h-full min-h-0 flex-col items-center gap-2 rounded-2xl p-3 sm:p-4">
       <svg
         viewBox="0 0 100 100"
-        className="w-full max-w-20 sm:max-w-24"
+        className="w-full max-w-[5.5rem] shrink-0 sm:max-w-24"
         role="img"
         aria-label={`${label}: ${rounded}`}
       >
@@ -56,7 +56,7 @@ export default function Gauge({ label, score }: Props) {
           {rounded}
         </text>
       </svg>
-      <span className="text-zinc-600 dark:text-zinc-300 text-center text-xs">
+      <span className="text-zinc-600 dark:text-zinc-300 flex min-h-[2.75rem] w-full items-center justify-center text-balance px-0.5 text-center text-xs leading-snug">
         {label}
       </span>
     </div>

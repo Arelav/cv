@@ -25,7 +25,7 @@ export default function LighthouseScores({ data }: Props) {
 
   return (
     <>
-      <div className="mt-8 grid grid-cols-4 gap-5 sm:gap-7">
+      <div className="mt-8 grid grid-cols-2 gap-3 gap-y-4 md:grid-cols-4 md:gap-7">
         <Gauge label="Performance" score={performance} />
         <Gauge label="Accessibility" score={accessibility} />
         <Gauge label="Best Practices" score={bestPractices} />

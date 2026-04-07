@@ -4,7 +4,9 @@ import RepoCard from "./RepoCard";
 import Stats from "./Stats";
 import TopLanguages from "./TopLanguages";
 
-type Props = { stats: GitHubStats };
+interface Props {
+  stats: GitHubStats;
+}
 
 export default function GitHubLoaded({ stats }: Props) {
   const topRepos = stats.topRepos ?? [];

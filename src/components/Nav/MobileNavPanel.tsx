@@ -19,7 +19,7 @@ const panel = cva(
   },
 );
 
-type Props = {
+interface Props {
   person: Person;
   open: boolean;
   panelId: string;

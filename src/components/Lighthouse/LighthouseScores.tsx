@@ -2,7 +2,9 @@ import type { LighthouseResult } from "@/types/api";
 import { formatMilliseconds } from "./format";
 import Gauge from "./Gauge";
 
-type Props = { data: LighthouseResult };
+interface Props {
+  data: LighthouseResult;
+}
 
 export default function LighthouseScores({ data }: Props) {
   const {

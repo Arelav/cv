@@ -67,7 +67,7 @@ export default function Nav({ person }: Props) {
               person={person}
               open={menuOpen}
               panelId={panelId}
-              action={() => setMenuOpen(false)}
+              onClose={() => setMenuOpen(false)}
             />
           </div>
         </div>

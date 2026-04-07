@@ -23,14 +23,14 @@ interface Props {
   person: Person;
   open: boolean;
   panelId: string;
-  action: () => void;
+  onClose: () => void;
 };
 
 export default function MobileNavPanel({
   person,
   open,
   panelId,
-  action,
+  onClose,
 }: Props) {
   return (
     <div id={panelId} className="md:hidden">
@@ -42,7 +42,7 @@ export default function MobileNavPanel({
                 <Link
                   href="/"
                   className={mobileSheetRowClass}
-                  onClick={action}
+                  onClick={onClose}
                 >
                   Home
                 </Link>
@@ -51,7 +51,7 @@ export default function MobileNavPanel({
                 <Link
                   href="/resume"
                   className={mobileSheetRowClass}
-                  onClick={action}
+                  onClick={onClose}
                 >
                   Resume
                 </Link>
@@ -62,7 +62,7 @@ export default function MobileNavPanel({
                   target="_blank"
                   rel="noopener noreferrer"
                   className={mobileSheetRowClass}
-                  onClick={action}
+                  onClick={onClose}
                 >
                   GitHub
                 </a>
@@ -73,7 +73,7 @@ export default function MobileNavPanel({
                   target="_blank"
                   rel="noopener noreferrer"
                   className={mobileSheetRowClass}
-                  onClick={action}
+                  onClick={onClose}
                 >
                   LinkedIn
                 </a>
@@ -82,7 +82,7 @@ export default function MobileNavPanel({
                 <a
                   href={`mailto:${person.contact.email}`}
                   className={mobileSheetRowClass}
-                  onClick={action}
+                  onClick={onClose}
                 >
                   Email
                 </a>

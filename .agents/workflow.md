@@ -18,7 +18,5 @@
 - Environment switching via `.vscode/settings.json`
 
 ## Docs & Research
-- Use the right tool for the job — MCPs, skills, subagents, whatever fits best
-- context7 MCP for library docs
-- WebSearch MCP for troubleshooting
-- Skills: `/tailwind`, `/nextjs`, `/biome`, `/typescript`, `/tanstack-query`, `/fontawesome`, `/jj`, `/agent-setup`
+- Use Context7 MCP for library docs — do not guess from training data
+- Use WebSearch MCP for troubleshooting issues not covered by Context7

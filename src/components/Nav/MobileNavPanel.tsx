@@ -1,46 +1,48 @@
 "use client";
 
-import clsx from "clsx";
+import { cva } from "class-variance-authority";
 import Link from "next/link";
 import type { Person } from "@/lib/content";
 
 const mobileSheetRowClass =
   "flex min-h-12 items-center rounded-lg px-4 text-base font-medium text-zinc-900 transition-[background-color,color,box-shadow] active:bg-white/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 dark:text-zinc-100 dark:active:bg-white/15 dark:focus-visible:ring-zinc-500";
 
+const panel = cva(
+  "overflow-hidden transition-[max-height,opacity,transform] duration-300 ease-out will-change-[max-height,opacity,transform]",
+  {
+    variants: {
+      open: {
+        true: "pointer-events-auto max-h-[520px] opacity-100 translate-y-0",
+        false: "pointer-events-none max-h-0 opacity-0 -translate-y-2",
+      },
+    },
+  },
+);
+
 type Props = {
   person: Person;
   open: boolean;
   panelId: string;
-  onClose: () => void;
+  action: () => void;
 };
 
 export default function MobileNavPanel({
   person,
   open,
   panelId,
-  onClose,
+  action,
 }: Props) {
   return (
     <div id={panelId} className="md:hidden">
       <div className="w-full">
-        <div
-          inert={!open}
-          className={clsx(
-            "overflow-hidden",
-            "transition-[max-height,opacity,transform] duration-300 ease-out",
-            "will-change-[max-height,opacity,transform]",
-            open
-              ? "pointer-events-auto max-h-[520px] opacity-100 translate-y-0"
-              : "pointer-events-none max-h-0 opacity-0 -translate-y-2",
-          )}
-        >
+        <div inert={!open} className={panel({ open })}>
           <div className="p-2">
             <ul className="grid gap-1">
               <li>
                 <Link
                   href="/"
                   className={mobileSheetRowClass}
-                  onClick={onClose}
+                  onClick={action}
                 >
                   Home
                 </Link>
@@ -49,7 +51,7 @@ export default function MobileNavPanel({
                 <Link
                   href="/resume"
                   className={mobileSheetRowClass}
-                  onClick={onClose}
+                  onClick={action}
                 >
                   Resume
                 </Link>
@@ -60,7 +62,7 @@ export default function MobileNavPanel({
                   target="_blank"
                   rel="noopener noreferrer"
                   className={mobileSheetRowClass}
-                  onClick={onClose}
+                  onClick={action}
                 >
                   GitHub
                 </a>
@@ -71,7 +73,7 @@ export default function MobileNavPanel({
                   target="_blank"
                   rel="noopener noreferrer"
                   className={mobileSheetRowClass}
-                  onClick={onClose}
+                  onClick={action}
                 >
                   LinkedIn
                 </a>
@@ -80,7 +82,7 @@ export default function MobileNavPanel({
                 <a
                   href={`mailto:${person.contact.email}`}
                   className={mobileSheetRowClass}
-                  onClick={onClose}
+                  onClick={action}
                 >
                   Email
                 </a>

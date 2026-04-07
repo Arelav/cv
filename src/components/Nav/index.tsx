@@ -1,6 +1,6 @@
 "use client";
 
-import clsx from "clsx";
+import { cx } from "class-variance-authority";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useState } from "react";
 import { useMedia } from "react-use";
@@ -41,7 +41,7 @@ export default function Nav({ person }: Props) {
     <header className="sticky top-0 z-50">
       <div className="mx-auto w-full max-w-none px-0 py-0 md:max-w-3xl md:px-7 md:py-3 lg:px-8">
         <div
-          className={clsx(
+          className={cx(
             "frosted-glass",
             "rounded-none border-x-0",
             "md:rounded-2xl md:border-x",
@@ -58,7 +58,7 @@ export default function Nav({ person }: Props) {
           </div>
 
           <div
-            className={clsx(
+            className={cx(
               "md:hidden",
               menuOpen && "border-t border-white/45 dark:border-white/10",
             )}
@@ -67,7 +67,7 @@ export default function Nav({ person }: Props) {
               person={person}
               open={menuOpen}
               panelId={panelId}
-              onClose={() => setMenuOpen(false)}
+              action={() => setMenuOpen(false)}
             />
           </div>
         </div>

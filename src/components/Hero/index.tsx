@@ -38,11 +38,11 @@ export default function Hero({ person }: Props) {
         >
           {person.contact.email}
         </a>
-        <MetaSeparator variant="nav" />
+        <MetaSeparator />
         <span className="text-zinc-600 dark:text-zinc-300">
           {person.location}
         </span>
-        <MetaSeparator variant="nav" />
+        <MetaSeparator />
         <a
           href={person.contact.linkedin}
           target="_blank"
@@ -51,7 +51,7 @@ export default function Hero({ person }: Props) {
         >
           LinkedIn
         </a>
-        <MetaSeparator variant="nav" />
+        <MetaSeparator />
         <a
           href={person.contact.github}
           target="_blank"

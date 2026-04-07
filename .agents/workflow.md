@@ -13,9 +13,8 @@
 - Lint: `npm run lint`
 - Dev: `npm run dev`
 
-## API Testing
-- Use REST Client (`.http` files) — never curl
-- Environment switching via `.vscode/settings.json`
+## API
+- The Go backend (`cv-api`) includes **REST Client** requests in `api.http` for manual API testing.
 
 ## Docs & Research
 - Use Context7 MCP for library docs — do not guess from training data

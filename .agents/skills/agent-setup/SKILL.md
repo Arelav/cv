@@ -15,6 +15,7 @@ description: How to set up and configure AI agents correctly for this project
 
 - **context7** — up-to-date library docs. Always prefer this over training data or node_modules
 - **WebSearch** — for troubleshooting, issues not in context7
+- **Greptile** — PRs, reviews, and Greptile comments via MCP ([setup](https://www.greptile.com/docs/mcp-v2/setup), [tools](https://www.greptile.com/docs/mcp-v2/tools)). Use it when working on Greptile feedback; do not duplicate that flow in repo docs.
 
 ## How to use context7
 

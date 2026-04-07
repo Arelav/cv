@@ -20,6 +20,15 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Deployment
+
+This repo is set up to support **either**:
+- **Vercel** (managed Next.js hosting), **or**
+- **Cloudflare Workers** via **OpenNext** (see the `deploy`/`preview` scripts in `package.json`).
+
+It is **not supported** to deploy the same codebase to both platforms at once. Pick one target and keep environment
+variables / runtime assumptions aligned with that platform.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

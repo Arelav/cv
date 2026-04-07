@@ -3,10 +3,10 @@ import GitHubFetchError from "./GitHubFetchError";
 import GitHubLoaded from "./GitHubLoaded";
 
 export default async function GitHub() {
-  const response = await fetch(`${process.env.API_URL}/github/stats`);
-  const data = await response.json();
+  const res = await fetch(`${process.env.API_URL}/github/stats`);
+  const data = await res.json();
 
-  if (!response.ok) {
+  if (!res.ok) {
     return <GitHubFetchError />;
   }
 

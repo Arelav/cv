@@ -4,10 +4,10 @@ import LighthouseIntro from "./LighthouseIntro";
 import LighthouseScores from "./LighthouseScores";
 
 export default async function Lighthouse() {
-  const response = await fetch(`${process.env.API_URL}/lighthouse`);
-  const data = await response.json();
+  const res = await fetch(`${process.env.API_URL}/lighthouse`);
+  const data = await res.json();
 
-  if (!response.ok) {
+  if (!res.ok) {
     return <LighthouseFetchError />;
   }
 

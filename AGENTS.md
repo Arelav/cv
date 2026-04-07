@@ -10,12 +10,14 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - `node_modules/next/dist/docs/` — full doc tree; App Router lives under `01-app/`.
 - Common files:
   - `node_modules/next/dist/docs/01-app/01-getting-started/06-fetching-data.md` — Server Components `fetch` / streaming
-  - `node_modules/next/dist/docs/01-app/01-getting-started/10-error-handling.md` — expected errors vs `error.tsx` / `unstable_catchError`
+  - `node_modules/next/dist/docs/01-app/01-getting-started/10-error-handling.md` — Server Component `fetch`: `res` → `data` → `!res.ok`
+  - `node_modules/next/dist/docs/01-app/03-api-reference/04-functions/fetch.md` — extended `fetch` options (cache, `next.revalidate`, tags)
 
 **Canonical URLs (same content as local; good for search or when `node_modules` is missing):**
 
 - [Fetching data](https://nextjs.org/docs/app/getting-started/fetching-data)
 - [Error handling](https://nextjs.org/docs/app/getting-started/error-handling)
+- [fetch](https://nextjs.org/docs/app/api-reference/functions/fetch)
 
 **Also:** follow `.agents/skills/nextjs/SKILL.md` (Context7) when you need API details or are unsure of syntax.
 <!-- END:nextjs-agent-rules -->

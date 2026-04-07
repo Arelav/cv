@@ -1,18 +1,24 @@
 "use client";
 
 import Link from "next/link";
-import { person } from "@/lib/cv-data";
+import type { Person } from "@/lib/content";
 
 const mobileSheetRowClass =
   "flex min-h-12 items-center rounded-lg px-4 text-base font-medium text-zinc-900 transition-[background-color,color,box-shadow] active:bg-white/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-400 dark:text-zinc-100 dark:active:bg-white/15 dark:focus-visible:ring-zinc-500";
 
 type Props = {
+  person: Person;
   open: boolean;
   panelId: string;
   onClose: () => void;
 };
 
-export default function MobileNavPanel({ open, panelId, onClose }: Props) {
+export default function MobileNavPanel({
+  person,
+  open,
+  panelId,
+  onClose,
+}: Props) {
   return (
     <div id={panelId} className="md:hidden">
       <div className="w-full">

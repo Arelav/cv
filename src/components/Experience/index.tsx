@@ -1,7 +1,7 @@
 import { MetaSeparator } from "@/components/MetaSeparator";
-import { experience } from "@/lib/cv-data";
+import type { ExperienceJob } from "@/lib/content";
 
-export default function Experience() {
+export default function Experience({ jobs }: { jobs: ExperienceJob[] }) {
   return (
     <section aria-labelledby="experience-heading">
       <h2
@@ -12,7 +12,7 @@ export default function Experience() {
       </h2>
 
       <ol className="mt-6 space-y-10">
-        {experience.map((job) => (
+        {jobs.map((job) => (
           <li key={`${job.company}-${job.period}`}>
             <div className="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between">
               <div>

@@ -1,7 +1,13 @@
 import { MetaSeparator } from "@/components/MetaSeparator";
-import { education, languages } from "@/lib/cv-data";
+import type { EducationItem, LanguageItem } from "@/lib/content";
 
-export default function Education() {
+export default function Education({
+  education,
+  languages,
+}: {
+  education: EducationItem[];
+  languages: LanguageItem[];
+}) {
   return (
     <section aria-labelledby="education-heading">
       <h2

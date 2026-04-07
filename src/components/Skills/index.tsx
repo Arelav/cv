@@ -1,6 +1,6 @@
-import { skills } from "@/lib/cv-data";
+import type { SkillsByCategory } from "@/lib/content";
 
-export default function Skills() {
+export default function Skills({ skills }: { skills: SkillsByCategory }) {
   return (
     <section aria-labelledby="skills-heading">
       <h2 id="skills-heading" className="text-xl font-semibold tracking-tight">

@@ -2,9 +2,9 @@ import { faHouse } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
-import { person } from "@/lib/cv-data";
+import type { Person } from "@/lib/content";
 
-export default function NavBrand() {
+export default function NavBrand({ person }: { person: Person }) {
   return (
     <Link
       href="/"

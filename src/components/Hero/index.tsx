@@ -1,7 +1,7 @@
 import { MetaSeparator } from "@/components/MetaSeparator";
-import { person } from "@/lib/cv-data";
+import type { Person } from "@/lib/content";
 
-export default function Hero() {
+export default function Hero({ person }: { person: Person }) {
   return (
     <header className="border-b border-zinc-200 pb-8 dark:border-zinc-800">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">

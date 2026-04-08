@@ -10,9 +10,11 @@
 import { home } from "../../../.velite";
 
 export {
+  certifications,
   education,
   experience,
   person,
+  resume,
   skills,
   spokenLanguages,
 } from "../../../.velite";
@@ -20,6 +22,7 @@ export {
 export const introMarkdown = home.introMarkdown;
 
 export type {
+  CertificationItem,
   EducationItem,
   ExperienceJob,
   LanguageItem,

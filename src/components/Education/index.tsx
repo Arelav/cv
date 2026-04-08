@@ -1,12 +1,21 @@
 import { MetaSeparator } from "@/components/MetaSeparator";
-import type { EducationItem, LanguageItem } from "@/lib/content";
+import type {
+  CertificationItem,
+  EducationItem,
+  LanguageItem,
+} from "@/lib/content";
 
 interface Props {
   education: EducationItem[];
   languages: LanguageItem[];
+  certifications: CertificationItem[];
 }
 
-export default function Education({ education, languages }: Props) {
+export default function Education({
+  education,
+  languages,
+  certifications,
+}: Props) {
   return (
     <section aria-labelledby="education-heading">
       <h2
@@ -54,6 +63,37 @@ export default function Education({ education, languages }: Props) {
           ))}
         </ul>
       </div>
+
+      {certifications.length > 0 ? (
+        <div className="mt-8">
+          <h3 className="text-zinc-600 dark:text-zinc-300 text-sm font-medium">
+            Certifications
+          </h3>
+          <ul className="text-zinc-700 dark:text-zinc-300 mt-2 space-y-2 text-sm">
+            {certifications.map((c) => (
+              <li key={c.name}>
+                <span className="font-medium">{c.name}</span>
+                {c.issuer ? (
+                  <>
+                    <MetaSeparator />
+                    <span className="text-zinc-600 dark:text-zinc-300">
+                      {c.issuer}
+                    </span>
+                  </>
+                ) : null}
+                {c.year ? (
+                  <>
+                    <MetaSeparator />
+                    <span className="text-zinc-600 dark:text-zinc-300">
+                      {c.year}
+                    </span>
+                  </>
+                ) : null}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
     </section>
   );
 }

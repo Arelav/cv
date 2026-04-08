@@ -37,6 +37,20 @@ export default defineConfig({
           introMarkdown: (data.introMarkdown ?? "").trim(),
         })),
     }),
+    resume: defineCollection({
+      name: "Resume",
+      pattern: "pages/resume.md",
+      single: true,
+      schema: s
+        .object({
+          headline: s.string().optional(),
+          summaryMarkdown: s.raw(),
+        })
+        .transform((data) => ({
+          headline: data.headline?.trim() || null,
+          summaryMarkdown: (data.summaryMarkdown ?? "").trim(),
+        })),
+    }),
     skills: defineCollection({
       name: "Skills",
       pattern: "skills.md",
@@ -71,6 +85,22 @@ export default defineConfig({
         .transform((data) => ({
           ...data,
           note: data.note ?? null,
+        })),
+    }),
+    certifications: defineCollection({
+      name: "Certification",
+      pattern: "certifications/**/*.md",
+      schema: s
+        .object({
+          name: s.string(),
+          issuer: s.string().optional(),
+          year: s.string().optional(),
+        })
+        .strict()
+        .transform((data) => ({
+          name: data.name,
+          issuer: data.issuer,
+          year: data.year,
         })),
     }),
     experience: defineCollection({

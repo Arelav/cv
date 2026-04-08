@@ -6,10 +6,7 @@ skills:
     - HTML
     - CSS
     - SASS/SCSS
-  CSS-in-JS:
-    - Styled Components
-    - Emotion
-    - MUI Styled
+    - CSS-in-JS (Styled Components, Emotion, MUI Styled)
   Frameworks & Libraries:
     - React.js
     - Next.js
@@ -41,6 +38,7 @@ skills:
     - State management
     - Performance optimization
     - Accessibility (WCAG)
+    - Cross-browser Compatibility
     - Feature flags
     - A/B testing
     - Code review

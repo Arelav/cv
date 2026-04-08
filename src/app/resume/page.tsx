@@ -1,7 +1,7 @@
 import ReactMarkdown from "react-markdown";
 import Education from "@/components/Education";
 import Experience from "@/components/Experience";
-import ResumeDownloadLinks from "@/components/Resume/ResumeDownloadLinks";
+import ResumeDownloadLinks from "./ResumeDownloadLinks";
 import Skills from "@/components/Skills";
 import {
   certifications,

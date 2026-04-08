@@ -2,8 +2,4 @@
 headline: Senior Software Developer
 ---
 
-Software engineer with **10+ years** shipping customer-facing products in **fintech, gaming, and SaaS** — from large-scale gaming and payments platforms to regulated financial apps. Comfortable owning work across the stack: **TypeScript**, **React** and **Next.js**, **Node.js**, **PostgreSQL**, automated testing, **CI/CD**, and production debugging.
-
-Known for raising the quality bar through sensible architecture, code review, and mentoring — without slowing teams down. Strong interest in **performance**, **accessibility**, and systems that stay maintainable as products grow.
-
-**Canadian permanent resident**, based in Alberta; **open to remote** roles.
+Senior Frontend Developer with 10+ years of experience building complex, data-driven web applications using React, TypeScript, and modern frontend architecture. Strong expertise in component libraries, state management, performant data-fetching patterns, and REST API integration. Experienced working with backend teams to design and consume APIs, with production exposure to Node.js and PostgreSQL. Comfortable contributing to Agile ceremonies, partnering with Product and Design, and taking ownership of features end-to-end. Open to expanding into Java backend work — have a strong OOP foundation and pick up new languages quickly.

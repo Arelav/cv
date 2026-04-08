@@ -99,8 +99,8 @@ export default defineConfig({
         .strict()
         .transform((data) => ({
           name: data.name,
-          issuer: data.issuer,
-          year: data.year,
+          issuer: data.issuer ?? null,
+          year: data.year ?? null,
         })),
     }),
     experience: defineCollection({

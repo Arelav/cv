@@ -50,6 +50,3 @@ public/static
 # OpenNext / Wrangler
 .open-next
 .wrangler
-
-# Sentry Config File
-.env.sentry-build-plugin

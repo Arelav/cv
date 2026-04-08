@@ -5,7 +5,7 @@ period: Sep 2017 – Mar 2022
 location: Richmond Hill, ON
 ---
 
-- Built and maintained complex, enterprise-scale React user interfaces with a focus on performance optimization and cross-browser compatibility.
-- Contributed to a company-wide frontend platform and maintained an in-house component framework used by multiple product teams globally.
-- Introduced new tooling and developer experience improvements that reduced build times and streamlined local development workflows.
-- Mentored junior developers through structured code reviews and pair programming sessions, raising overall code quality standards.
+- Senior engineer on core platform and Web Cashier team — built high-traffic React applications serving millions of global users, including payment flows and fraud handling.
+- Built and maintained a shared component library used across multiple product teams; enforced standards via automated linting and documented best practices.
+- Optimized Lighthouse scores and bundle sizes; replaced heavy dependencies with lighter alternatives and implemented code splitting.
+- Wrote Jest and React Testing Library test suites; conducted code reviews and mentored engineers across the org.

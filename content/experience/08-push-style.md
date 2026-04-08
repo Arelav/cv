@@ -5,4 +5,4 @@ period: 2008 – 2012
 location: Ashkelon, Israel
 ---
 
-- Co-founded boutique design studio, developing client websites using HTML, CSS, and JavaScript/jQuery.
+- Co-founded a boutique design and development studio — designed and built client websites, bridging visual design with front-end implementation.

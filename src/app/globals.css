@@ -22,7 +22,31 @@
     @apply dark:border-white/10 dark:bg-black/35 dark:shadow-[inset_0_1px_0_0_rgb(255_255_255/0.05)];
   }
 
-  /* Parallax backdrop — backgrounds */
+  .resume-download-nav {
+    @apply relative isolate z-10 flex flex-wrap items-center gap-x-2 gap-y-2 text-sm text-zinc-600 dark:text-zinc-400;
+  }
+
+  .resume-download-nav--before-content {
+    @apply mb-2 border-b border-zinc-200/80 pb-6 dark:border-white/10;
+  }
+
+  .resume-download-nav--after-content {
+    @apply mt-2 border-t border-zinc-200/80 pt-6 dark:border-white/10;
+  }
+
+  .resume-download-nav-label {
+    @apply shrink-0 font-medium text-zinc-800 dark:text-zinc-200;
+  }
+
+  .resume-download-button {
+    @apply inline-flex shrink-0 touch-manipulation items-center justify-center rounded-full border border-white/45 bg-white/35 px-4 py-1.5 text-sm font-semibold text-zinc-800 shadow-sm backdrop-blur-xl backdrop-saturate-150;
+    @apply transition-[border-color,background-color,box-shadow,transform] hover:border-white/65 hover:bg-white/45 hover:shadow-md active:scale-[0.98];
+    @apply dark:border-white/10 dark:bg-black/35 dark:text-zinc-100 dark:shadow-[inset_0_1px_0_0_rgb(255_255_255/0.05)];
+    @apply dark:hover:border-white/[0.16] dark:hover:bg-black/50;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/45 focus-visible:ring-offset-2 focus-visible:ring-offset-blue-100/40;
+    @apply dark:focus-visible:ring-blue-400/35 dark:focus-visible:ring-offset-[#02060f];
+  }
+
   .parallax-bg-a-light {
     background: linear-gradient(
       150deg in oklch,

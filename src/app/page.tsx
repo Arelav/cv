@@ -15,7 +15,7 @@ export default function Home() {
         {person.title}
       </p>
 
-      <div className="mt-10 max-w-xl space-y-5 text-zinc-700 dark:text-zinc-300">
+      <div className="mt-10 max-w-xl space-y-5 text-zinc-700 dark:text-zinc-300 [&_a]:font-medium [&_a]:text-blue-700 [&_a]:underline [&_a]:underline-offset-2 dark:[&_a]:text-blue-400">
         <ReactMarkdown>{introMarkdown}</ReactMarkdown>
       </div>
 

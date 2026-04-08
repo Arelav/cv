@@ -1,18 +1,5 @@
 ---
 skills:
-  Frameworks & Libraries:
-    - React.js
-    - Next.js
-    - Redux
-    - Redux-Saga
-    - TanStack Query
-    - Jotai
-    - Angular
-    - AngularJS
-    - jQuery
-    - Ionic
-    - Node.js
-    - MUI
   Languages & Markup:
     - TypeScript
     - JavaScript
@@ -21,27 +8,57 @@ skills:
     - SASS/SCSS
   CSS-in-JS:
     - Styled Components
+    - Emotion
     - MUI Styled
-  Tools & Platforms:
-    - Webpack
-    - Vite
+  Frameworks & Libraries:
+    - React.js
+    - Next.js
+    - Redux
+    - TanStack Query
+    - Jotai
+    - Angular
+    - Node.js
+    - MUI
+    - GraphQL
+  Testing:
+    - Jest
+    - React Testing Library
     - Vitest
     - Cypress
     - Playwright
+    - Mocha
+  Performance & Observability:
+    - Lighthouse
+    - React DevTools Profiler
+    - why-did-you-render
+    - React Scan
+    - LogRocket
+    - Bundle optimization
+    - Code splitting
+    - Cross-browser compatibility
+  Practices:
+    - Component architecture
+    - State management
+    - Performance optimization
+    - Accessibility (WCAG)
+    - Feature flags
+    - A/B testing
+    - Code review
+    - Mentoring
+    - Agile/Scrum
+  Tools:
+    - Webpack
+    - Vite
+    - Babel
+    - ESLint
     - Git
     - GitHub Actions
     - CI/CD
-    - REST APIs
-    - Payload CMS
+    - NX Monorepo
+    - Docker
+    - PostgreSQL
     - Figma
-    - Adobe Creative Suite
-  Practices:
-    - Agile
-    - Scrum
-    - Code Review
-    - Component Architecture
-    - Performance Optimization
-    - Responsive Design
-    - Cross-browser Compatibility
-    - Mentoring
+    - REST APIs
+    - GitHub Copilot
+    - Cursor
 ---

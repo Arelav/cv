@@ -14,7 +14,7 @@ export default function ResumeDownloadLinks({ placement = "top" }: Props) {
       : "Download résumé";
 
   return (
-    <div
+    <nav
       aria-label={ariaLabel}
       className={cx(
         "resume-download-nav",
@@ -37,6 +37,6 @@ export default function ResumeDownloadLinks({ placement = "top" }: Props) {
       >
         Word (.docx)
       </a>
-    </div>
+    </nav>
   );
 }

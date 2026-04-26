@@ -8,11 +8,42 @@
 @layer base {
   html {
     overflow-x: clip;
-    @apply bg-blue-100 dark:bg-[#02060f];
+    @apply bg-blue-100 dark:bg-[#071a3e];
   }
 
   body {
-    @apply min-h-dvh bg-blue-100 text-zinc-900 dark:bg-[#02060f] dark:text-zinc-50;
+    @apply min-h-dvh bg-blue-100 text-zinc-900 dark:bg-[#071a3e] dark:text-zinc-50;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: -150%;
+    z-index: 0;
+    pointer-events: none;
+    filter: blur(2px);
+    animation: bg-stripes-drift linear both;
+    animation-timeline: scroll(root);
+    background: repeating-linear-gradient(
+      125deg in oklch,
+      transparent 0px,
+      rgb(37 99 235 / 0.22) 14px,
+      rgb(37 99 235 / 0.52) 28px,
+      rgb(37 99 235 / 0.52) 44px,
+      rgb(37 99 235 / 0.22) 56px,
+      transparent 60px,
+      transparent 360px,
+      rgb(14 165 233 / 0.18) 372px,
+      rgb(14 165 233 / 0.44) 386px,
+      rgb(14 165 233 / 0.44) 414px,
+      rgb(14 165 233 / 0.18) 428px,
+      transparent 440px,
+      transparent 520px
+    );
+
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
   }
 }
 
@@ -44,234 +75,15 @@
     @apply dark:border-white/10 dark:bg-black/35 dark:text-zinc-100 dark:shadow-[inset_0_1px_0_0_rgb(255_255_255/0.05)];
     @apply dark:hover:border-white/[0.16] dark:hover:bg-black/50;
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/45 focus-visible:ring-offset-2 focus-visible:ring-offset-blue-100/40;
-    @apply dark:focus-visible:ring-blue-400/35 dark:focus-visible:ring-offset-[#02060f];
-  }
-
-  .parallax-bg-a-light {
-    background: linear-gradient(
-      150deg in oklch,
-      rgb(191 219 254 / 0.95) 0%,
-      rgb(191 219 254 / 0.95) 16%,
-      rgb(96 165 250 / 0.52) 38%,
-      rgb(96 165 250 / 0.52) 46%,
-      rgb(147 197 253 / 0.78) 64%,
-      rgb(147 197 253 / 0.78) 70%,
-      rgb(30 64 175 / 0.22) 100%
-    );
-  }
-  .parallax-bg-a-dark {
-    background: linear-gradient(
-      150deg in oklch,
-      rgb(2 6 23 / 0.97) 0%,
-      rgb(2 6 23 / 0.97) 18%,
-      rgb(7 28 80 / 0.88) 42%,
-      rgb(7 28 80 / 0.88) 50%,
-      rgb(3 12 48 / 0.94) 72%,
-      rgb(3 12 48 / 0.94) 78%,
-      rgb(10 38 120 / 0.82) 100%
-    );
-  }
-  .parallax-bg-b-stripes {
-    background: repeating-linear-gradient(
-      125deg in oklch,
-      transparent 0px,
-      rgb(37 99 235 / 0.22) 14px,
-      rgb(37 99 235 / 0.52) 28px,
-      rgb(37 99 235 / 0.52) 44px,
-      rgb(37 99 235 / 0.22) 56px,
-      transparent 60px,
-      transparent 360px,
-      rgb(14 165 233 / 0.18) 372px,
-      rgb(14 165 233 / 0.44) 386px,
-      rgb(14 165 233 / 0.44) 414px,
-      rgb(14 165 233 / 0.18) 428px,
-      transparent 440px,
-      transparent 520px
-    );
-  }
-  .parallax-bg-b-wash {
-    background:
-      linear-gradient(
-        217deg in oklch,
-        transparent 52%,
-        transparent 62%,
-        rgb(59 130 246 / 0.38) 100%
-      ),
-      linear-gradient(
-        12deg in oklch,
-        rgb(37 99 235 / 0.28) 0%,
-        rgb(37 99 235 / 0.28) 12%,
-        transparent 44%
-      ),
-      linear-gradient(
-        110deg in oklch,
-        transparent 42%,
-        transparent 54%,
-        rgb(96 165 250 / 0.22) 80%,
-        rgb(96 165 250 / 0.22) 88%,
-        transparent 96%
-      );
-  }
-  .parallax-bg-c-light {
-    background:
-      radial-gradient(
-        ellipse 90% 70% at 72% 28%,
-        rgb(59 130 246 / 0.32) 0%,
-        rgb(59 130 246 / 0.32) 24%,
-        transparent 58%
-      ),
-      radial-gradient(
-        ellipse 75% 60% at 18% 78%,
-        rgb(14 165 233 / 0.24) 0%,
-        rgb(14 165 233 / 0.24) 22%,
-        transparent 52%
-      );
-  }
-  .parallax-bg-c-dark {
-    background:
-      radial-gradient(
-        ellipse 95% 72% at 78% 22%,
-        rgb(29 78 216 / 0.52) 0%,
-        rgb(29 78 216 / 0.52) 24%,
-        transparent 58%
-      ),
-      radial-gradient(
-        ellipse 78% 62% at 12% 82%,
-        rgb(14 165 233 / 0.36) 0%,
-        rgb(14 165 233 / 0.36) 22%,
-        transparent 52%
-      );
-  }
-  .parallax-bg-d-light {
-    background:
-      radial-gradient(
-        circle 42% at 14% 32%,
-        rgb(59 130 246 / 0.34),
-        transparent 68%
-      ),
-      radial-gradient(
-        circle 38% at 86% 22%,
-        rgb(96 165 250 / 0.28),
-        transparent 64%
-      ),
-      radial-gradient(
-        ellipse 48% 40% at 68% 78%,
-        rgb(147 197 253 / 0.22),
-        transparent 58%
-      ),
-      radial-gradient(
-        circle 36% at 44% 88%,
-        rgb(14 165 233 / 0.2),
-        transparent 56%
-      );
-  }
-  .parallax-bg-d-dark {
-    background:
-      radial-gradient(
-        circle 40% at 12% 28%,
-        rgb(29 78 216 / 0.44),
-        transparent 65%
-      ),
-      radial-gradient(
-        circle 36% at 90% 20%,
-        rgb(14 165 233 / 0.32),
-        transparent 60%
-      ),
-      radial-gradient(
-        ellipse 46% 38% at 62% 80%,
-        rgb(37 99 235 / 0.28),
-        transparent 55%
-      ),
-      radial-gradient(
-        circle 34% at 48% 90%,
-        rgb(7 28 80 / 0.5),
-        transparent 52%
-      );
-  }
-  .parallax-bg-e-light {
-    background: linear-gradient(
-      180deg in oklch,
-      rgb(0 0 0 / 0.1) 0%,
-      rgb(0 0 0 / 0.04) 28%,
-      transparent 45%,
-      transparent 58%,
-      rgb(0 0 0 / 0.06) 78%,
-      rgb(0 0 0 / 0.16) 100%
-    );
-  }
-  .parallax-bg-e-dark {
-    background: linear-gradient(
-      180deg in oklch,
-      rgb(0 0 0 / 0.72) 0%,
-      rgb(0 0 0 / 0.36) 30%,
-      transparent 48%,
-      transparent 55%,
-      rgb(0 0 0 / 0.42) 75%,
-      rgb(0 0 0 / 0.78) 100%
-    );
-  }
-
-  .parallax-vignette-light {
-    background: radial-gradient(
-      ellipse 140% 120% at 50% 45%,
-      transparent 48%,
-      rgb(0 0 30 / 0.28) 82%,
-      rgb(0 0 20 / 0.48) 100%
-    );
-  }
-  .parallax-vignette-dark {
-    background: radial-gradient(
-      ellipse 140% 120% at 50% 45%,
-      transparent 38%,
-      rgb(0 0 0 / 0.62) 80%,
-      rgb(0 0 0 / 0.88) 100%
-    );
+    @apply dark:focus-visible:ring-blue-400/35 dark:focus-visible:ring-offset-[#071a3e];
   }
 }
 
-@layer utilities {
-  .parallax-layer {
-    @apply absolute -inset-[150%] origin-center pointer-events-none;
-    will-change: transform;
-    transform: translate3d(
-        calc(var(--scroll-y, 0px) * var(--lx, 0)),
-        calc(var(--scroll-y, 0px) * var(--ly, 0)),
-        0
-      )
-      scale(1.12);
-
-    @media (prefers-reduced-motion: reduce) {
-      transform: translate3d(
-          calc(var(--scroll-y, 0px) * var(--lx, 0) * 0.15),
-          calc(var(--scroll-y, 0px) * var(--ly, 0) * 0.15),
-          0
-        )
-        scale(1.12);
-    }
+@keyframes bg-stripes-drift {
+  from {
+    transform: translateY(0);
   }
-
-  .parallax-layer-0 {
-    --lx: 0.18;
-    --ly: -0.55;
-  }
-  .parallax-layer-1 {
-    --lx: -0.32;
-    --ly: 1.55;
-  }
-  .parallax-layer-2 {
-    --lx: -0.16;
-    --ly: 0.85;
-  }
-  .parallax-layer-3 {
-    --lx: 0.36;
-    --ly: -2.7;
-  }
-  .parallax-layer-4 {
-    --lx: -0.2;
-    --ly: 1.05;
-  }
-  .parallax-layer-5 {
-    --lx: 0.13;
-    --ly: -1.2;
+  to {
+    transform: translateY(30vh);
   }
 }

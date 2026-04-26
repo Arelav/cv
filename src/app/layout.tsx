@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Nav from "@/components/Nav";
-import ParallaxBackdrop from "@/components/ParallaxBackdrop";
 import { person } from "@/lib/content";
 import "./globals.css";
 
@@ -44,7 +43,6 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
       <body>
-        <ParallaxBackdrop />
         <div className="relative z-10 min-h-full">
           <Nav person={person} />
           {children}

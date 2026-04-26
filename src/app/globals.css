@@ -231,7 +231,7 @@
 
 @layer utilities {
   .parallax-layer {
-    @apply absolute -inset-[85%] origin-center pointer-events-none;
+    @apply absolute -inset-[150%] origin-center pointer-events-none;
     will-change: transform;
     transform: translate3d(
         calc(var(--scroll-y, 0px) * var(--lx, 0)),

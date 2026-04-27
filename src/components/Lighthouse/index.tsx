@@ -5,16 +5,16 @@ import LighthouseScores from "./LighthouseScores";
 
 export default async function Lighthouse() {
   const res = await fetch(`${process.env.API_URL}/lighthouse`);
-  const data = await res.json();
 
   if (!res.ok) {
     return <LighthouseFetchError />;
   }
 
+  const data: LighthouseResult = await res.json();
   return (
     <section aria-labelledby="lighthouse-heading">
       <LighthouseIntro />
-      <LighthouseScores data={data as LighthouseResult} />
+      <LighthouseScores data={data} />
     </section>
   );
 }

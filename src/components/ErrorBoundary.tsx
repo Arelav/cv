@@ -12,7 +12,7 @@ function SectionErrorFallback(
       <button
         type="button"
         onClick={() => retry()}
-        className="underline hover:text-zinc-900 dark:hover:text-zinc-100"
+        className="underline hover:text-zinc-900 dark:hover:text-zinc-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-500 rounded-sm"
       >
         retry
       </button>

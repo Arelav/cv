@@ -1,0 +1,48 @@
+.bg-stripes {
+  position: fixed;
+  inset: -150%;
+  z-index: 0;
+  pointer-events: none;
+  filter: blur(2px);
+  translate: 0 var(--bg-y, 0px);
+  background: repeating-linear-gradient(
+    125deg in oklch,
+    transparent 0px,
+    rgb(37 99 235 / 0.22) 14px,
+    rgb(37 99 235 / 0.52) 28px,
+    rgb(37 99 235 / 0.52) 44px,
+    rgb(37 99 235 / 0.22) 56px,
+    transparent 60px,
+    transparent 360px,
+    rgb(14 165 233 / 0.18) 372px,
+    rgb(14 165 233 / 0.44) 386px,
+    rgb(14 165 233 / 0.44) 414px,
+    rgb(14 165 233 / 0.18) 428px,
+    transparent 440px,
+    transparent 520px
+  );
+}
+
+@supports (animation-timeline: scroll()) {
+  .bg-stripes {
+    animation: bg-stripes-drift linear both;
+    animation-duration: auto;
+    animation-timeline: scroll(root);
+  }
+
+  @keyframes bg-stripes-drift {
+    from {
+      translate: 0 0;
+    }
+    to {
+      translate: 0 30dvh;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-stripes {
+    animation: none;
+    translate: none;
+  }
+}

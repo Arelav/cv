@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import BackgroundStripes from "@/components/BackgroundStripes/BackgroundStripes";
 import Nav from "@/components/Nav";
 import { person } from "@/lib/content";
 import "./globals.css";
@@ -43,6 +44,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
       <body>
+        <BackgroundStripes />
         <div className="relative z-10 min-h-full">
           <Nav person={person} />
           {children}
